@@ -1,18 +1,110 @@
 <!DOCTYPE html>
-<html class="text-dark" data-bs-theme="light" lang="en" style="height: 2150px;background: var(--bs-body-color);font-family: 'Motiva Sans Test';">
+<html class="text-dark" data-bs-theme="auto" lang="en" style="height: 2150px;background: #1f1f26;font-family: 'Motiva Sans Test';">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Mineipulator Website</title>
+    <title>Lodestone - Edit, Convert &amp; Transform Minecraft Worlds!</title>
+    <link rel="canonical" href="https://team-lodestone.github.io/">
+    <meta property="og:url" content="https://team-lodestone.github.io/">
+    <meta name="description" content="The first open-source all-in-one Minecraft tool, compatible with all versions and editions!">
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "Project Lodestone",
+            "url": "https://team-lodestone.github.io"
+        }
+    </script>
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&amp;display=swap">
     <link rel="stylesheet" href="assets/css/Motiva%20Sans%20Test.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/typicons.min.css">
-    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
     <link rel="stylesheet" href="assets/css/Features-Boxed.css">
     <link rel="stylesheet" href="assets/css/Features-Clean.css">
     <link rel="stylesheet" href="assets/css/Features-Small-Icons-icons.css">
@@ -20,8 +112,8 @@
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
 </head>
 
-<body style="color: rgb(224,224,224);background: rgb(15,16,20);font-family: 'Motiva Sans Test';">
-    <nav class="navbar navbar-expand-lg fixed-top navigation-clean navbar-light" style="background: rgb(2,3,18);color: rgb(224,224,224);">
+<body style="color: rgb(224,224,224);font-family: 'Motiva Sans Test';background: Transparent;">
+    <nav class="navbar navbar-expand-lg fixed-top navigation-clean navbar-light" style="background: #1b1b21;color: rgb(224,224,224);">
         <div class="container"><a class="navbar-brand" href="#">Project Lodestone</a><button data-bs-toggle="collapse" class="navbar-toggler justify-content-sm-center align-items-sm-center" data-bs-target="#navcol-1" style="border-style: none;width: 40px;height: 40px;background: #232430;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;"><span class="visually-hidden">Toggle navigation</span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 35px;color: #ad95ed;">
                     <path d="M4 6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6C20 6.55228 19.5523 7 19 7H5C4.44772 7 4 6.55228 4 6Z" fill="currentColor"></path>
                     <path d="M4 18C4 17.4477 4.44772 17 5 17H19C19.5523 17 20 17.4477 20 18C20 18.5523 19.5523 19 19 19H5C4.44772 19 4 18.5523 4 18Z" fill="currentColor"></path>
@@ -35,7 +127,7 @@
                     <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(235,235,235);font-size: 18px;">Documentation</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(235,235,235);font-size: 18px;">Download<br></a></li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(235,235,235);font-size: 18px;">Features</a>
-                        <div class="dropdown-menu dropdown-menu-dark" style="background: #181922;"><a class="dropdown-item" href="#" style="background: #181922;">NBT Editor</a><a class="dropdown-item" href="#" style="background: #181922;">Sculptor</a><a class="dropdown-item" href="#" style="background: #181922;">Converter</a><a class="dropdown-item" href="#" style="background: #181922;">GRF Editor</a></div>
+                        <div class="dropdown-menu dropdown-menu-dark" style="background: #181922;"><a class="dropdown-item" href="#" style="background: #181922;"><img src="assets/img/TOOL_ICONS/NBT_Editor.svg" style="width: 26px;height: 26px;margin-right: 5px;">NBT Editor</a><a class="dropdown-item" href="#" style="background: #181922;"><img src="assets/img/TOOL_ICONS/Sculptor.svg" style="width: 26px;height: 26px;margin-right: 5px;">Sculptor</a><a class="dropdown-item" href="#" style="background: #181922;"><img src="assets/img/TOOL_ICONS/World_Converter.svg" style="width: 26px;height: 26px;margin-right: 5px;">Converter</a><a class="dropdown-item" href="#" style="background: #181922;"><img src="assets/img/TOOL_ICONS/GRF_Editor.svg" style="width: 26px;height: 26px;margin-right: 5px;">GRF Editor</a></div>
                     </li>
                 </ul>
             </div>
@@ -46,14 +138,32 @@
             <div class="col" style="text-align: center;">
                 <h1 style="color: #c9b9ef;box-shadow: 0px 0px;font-size: 118.5px;padding-top: 10px;text-shadow: 0px 0px 12px;font-family: Lobster, serif;padding-bottom: 20px;text-align: center;padding-right: 10px;padding-left: 10px;margin-bottom: 25px;">Lodestone</h1>
                 <h1 style="color: #c07bff;box-shadow: 0px 0px;font-size: 30px;text-shadow: 0px 0px 3px;"><strong>Edit</strong>, <strong>Convert </strong>and <strong>Transform </strong>Minecraft Worlds.</h1>
-                <p style="text-align: center;margin-bottom: 35px;font-size: 16px;text-shadow: 0px 0px 2px;">The first open-source all-in-one Minecraft tool, compatible with virtually all platforms, versions and editions. <br>Created by the community, for the community. An all-in-one multi-platform masterpiece.<br><br>Linux | Windows | macOS | Android | Web</p><button class="btn btn-primary" type="button" style="background: #ad95ed;margin-top: 15px;box-shadow: 0px 0px 15px #9e86de;margin-bottom: 15px;font-size: 18px;height: 50px;border-color: #9e86de;color: rgb(13,13,13);">&nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" style="font-size: 24px;">
+                <p style="text-align: center;margin-bottom: 5px;font-size: 16px;text-shadow: 0px 0px 2px;">The first open-source all-in-one Minecraft tool, compatible with virtually all platforms, versions and editions. <br>Created by the community, for the community. An all-in-one multi-platform masterpiece.</p>
+                <div class="row pulse animated" style="box-shadow: 0px 0px rgb(250,36,38);border-radius: 20px;background: Transparent;padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;border-width: 2px;border-style: none;margin-bottom: 20px;">
+                    <div class="col d-flex d-xxl-flex justify-content-center justify-content-xxl-center">
+                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 60px;height: 60px;margin-right: 6px;margin-top: 10px;background: #232430;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-microsoft icon" style="color: #ad95ed;font-size: 40px;width: 40px;height: 40px;">
+                                <path d="M7.462 0H0v7.19h7.462zM16 0H8.538v7.19H16zM7.462 8.211H0V16h7.462zm8.538 0H8.538V16H16z"></path>
+                            </svg></div>
+                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 60px;height: 60px;margin-right: 6px;margin-top: 10px;background: #232430;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-apple icon" style="color: #ad95ed;font-size: 40px;width: 40px;height: 40px;">
+                                <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"></path>
+                                <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"></path>
+                            </svg></div>
+                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 60px;height: 60px;margin-right: 6px;margin-top: 10px;background: #232430;"><i class="fa fa-linux icon" style="color: #ad95ed;font-size: 40px;width: 40px;height: 40px;"></i></div>
+                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 60px;height: 60px;margin-right: 6px;margin-top: 10px;background: #232430;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-android icon" style="color: #ad95ed;font-size: 40px;width: 40px;height: 40px;">
+                                <path d="M2.76 3.061a.5.5 0 0 1 .679.2l1.283 2.352A8.94 8.94 0 0 1 8 5a8.94 8.94 0 0 1 3.278.613l1.283-2.352a.5.5 0 1 1 .878.478l-1.252 2.295C14.475 7.266 16 9.477 16 12H0c0-2.523 1.525-4.734 3.813-5.966L2.56 3.74a.5.5 0 0 1 .2-.678ZM5 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m6 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path>
+                            </svg></div>
+                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 60px;height: 60px;margin-top: 10px;background: #232430;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-globe icon" style="color: #ad95ed;font-size: 40px;width: 40px;height: 40px;">
+                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472M3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"></path>
+                            </svg></div>
+                    </div>
+                </div><button class="btn btn-primary" type="button" style="background: #ad95ed;margin-top: 15px;box-shadow: 0px 0px 15px #9e86de;margin-bottom: 15px;font-size: 18px;height: 50px;border-color: #9e86de;color: rgb(13,13,13);">&nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" style="font-size: 24px;">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M3 17C3 16.4477 3.44772 16 4 16H16C16.5523 16 17 16.4477 17 17C17 17.5523 16.5523 18 16 18H4C3.44772 18 3 17.5523 3 17ZM6.29289 9.29289C6.68342 8.90237 7.31658 8.90237 7.70711 9.29289L9 10.5858L9 3C9 2.44772 9.44771 2 10 2C10.5523 2 11 2.44771 11 3L11 10.5858L12.2929 9.29289C12.6834 8.90237 13.3166 8.90237 13.7071 9.29289C14.0976 9.68342 14.0976 10.3166 13.7071 10.7071L10.7071 13.7071C10.5196 13.8946 10.2652 14 10 14C9.73478 14 9.48043 13.8946 9.29289 13.7071L6.29289 10.7071C5.90237 10.3166 5.90237 9.68342 6.29289 9.29289Z" fill="currentColor"></path>
                     </svg>&nbsp;<strong>STILL IN DEVELOPMENT.</strong></button>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="row" data-aos="fade-up" style="box-shadow: 0px 0px rgb(250,36,38);border: 2px solid rgb(66,67,88);border-radius: 20px;background: #181922;padding-top: 15px;padding-bottom: 15px;margin-top: 50px;padding-right: 15px;padding-left: 15px;margin-bottom: 50px;">
+        <div class="row" data-aos="fade-up" style="box-shadow: 0px 0px rgb(250,36,38);border: 2px solid rgb(66,67,88);border-radius: 20px;background: #232430;padding-top: 15px;padding-bottom: 15px;margin-top: 50px;padding-right: 15px;padding-left: 15px;margin-bottom: 50px;">
             <div class="col-md-3">
                 <h3 class="name" style="color: #c07bff;text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;font-weight: bold;">Ready For 1.21</h3>
                 <p class="description" style="margin-bottom: 30px;text-align: center;">Includes support for the latest version of Minecraft.</p>
@@ -79,7 +189,7 @@
             </div>
         </div>
     </div>
-    <div class="container text-center" style="background: #181922;margin-top: 50px;padding-left: 30px;padding-right: 30px;border-radius: 20px;padding-bottom: 30px;border: 2px solid rgb(66,67,88);margin-bottom: 50px;">
+    <div class="container text-center" style="background: #232430;margin-top: 50px;padding-left: 30px;padding-right: 30px;border-radius: 20px;padding-bottom: 30px;border: 2px solid rgb(66,67,88);margin-bottom: 50px;">
         <div class="intro">
             <h2 class="text-center" style="margin-bottom: 30px;color: #c07bff;margin-top: 20px;font-weight: bold;">Highlights</h2>
         </div>
@@ -88,17 +198,17 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card" style="background: rgba(255,255,255,0);border-style: none;">
-                            <div class="card-body" style="background: rgb(20,21,30);border: 1px solid rgb(21,25,33);border-radius: 15px;color: var(--bs-body-bg);margin-bottom: 50px;padding-top: 15px;padding-right: 15px;padding-bottom: 15px;padding-left: 15px;">
-                                <h4 class="card-title" style="color: #c07bff;text-align: center;font-size: 32px;"><i class="typcn typcn-pencil icon" style="color: #ad95ed;font-size: 40px;"></i><br>NBT Editor</h4>
-                                <p class="card-text" style="text-align: left;"><span style="color: rgb(224, 224, 224); background-color: rgb(20, 21, 30);">The most powerful NBT Editor in any open-source tool. Supporting S-NBT editing and extensions/plug-ins.</span><br><br></p><img>
+                            <div class="card-body" style="background: Transparent;color: var(--bs-body-bg);margin-bottom: 50px;padding-top: 15px;padding-right: 15px;padding-bottom: 15px;padding-left: 15px;border-style: none;">
+                                <h4 class="card-title" style="color: #c07bff;text-align: center;font-size: 32px;"><img src="assets/img/TOOL_ICONS/NBT_Editor.svg" style="width: 50px;height: 50px;margin-bottom: 10px;"><br>NBT Editor</h4>
+                                <p class="description" style="margin-bottom: 30px;text-align: left;">The most powerful NBT Editor in any open-source tool. Supporting S-NBT editing and extensions/plug-ins.</p><img>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card" style="background: rgba(255,255,255,0);border-style: none;">
-                            <div class="card-body" style="background: rgb(20,21,30);border: 1px solid rgb(21,25,33);border-radius: 15px;color: var(--bs-body-bg);margin-bottom: 50px;padding-top: 15px;padding-right: 15px;padding-bottom: 15px;padding-left: 15px;">
-                                <h4 class="card-title" style="color: #c07bff;text-align: center;font-size: 32px;"><i class="la la-cubes icon" style="color: #ad95ed;font-size: 40px;"></i><br>Sculptor</h4>
-                                <p class="card-text" style="text-align: left;"><span style="color: rgb(224, 224, 224); background-color: rgb(20, 21, 30);">Prune, copy, paste, and edit worlds without any external tools. The go-to feature for builders and building teams.</span><br><br></p><img>
+                            <div class="card-body" style="background: Transparent;color: var(--bs-body-bg);margin-bottom: 50px;padding-top: 15px;padding-right: 15px;padding-bottom: 15px;padding-left: 15px;border-style: none;">
+                                <h4 class="card-title" style="color: #c07bff;text-align: center;font-size: 32px;"><img src="assets/img/TOOL_ICONS/Sculptor.svg" style="width: 50px;height: 50px;margin-bottom: 10px;"><br>Sculptor</h4>
+                                <p class="description" style="margin-bottom: 30px;text-align: left;">Prune, copy, paste, and edit worlds without any external tools. The go-to feature for builders and building teams.</p><img>
                             </div>
                         </div>
                     </div>
@@ -108,30 +218,25 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card" style="background: rgba(255,255,255,0);border-style: none;">
-                    <div class="card-body" style="background: rgb(20,21,30);border: 1px solid rgb(21,25,33);border-radius: 15px;color: var(--bs-body-bg);margin-bottom: 50px;padding-top: 15px;padding-right: 15px;padding-bottom: 15px;padding-left: 15px;">
-                        <h4 class="card-title" style="color: #c07bff;text-align: center;font-size: 32px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-repeat icon" style="color: #ad95ed;font-size: 40px;">
-                                <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"></path>
-                                <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"></path>
-                            </svg><br>Converter</h4>
-                        <p class="card-text" style="text-align: left;"><span style="color: rgb(224, 224, 224); background-color: rgb(20, 21, 30);">Convert worlds in seconds with the first open-source world converter that supports all platforms.</span></p><img>
+                    <div class="card-body" style="background: Transparent;color: var(--bs-body-bg);margin-bottom: 50px;padding-top: 15px;padding-right: 15px;padding-bottom: 15px;padding-left: 15px;border-style: none;">
+                        <h4 class="card-title" style="color: #c07bff;text-align: center;font-size: 32px;"><img src="assets/img/TOOL_ICONS/World_Converter.svg" style="width: 50px;height: 50px;margin-bottom: 10px;"><br>Converter</h4>
+                        <p class="description" style="margin-bottom: 30px;text-align: left;">Convert worlds in seconds with the first open-source world converter that supports all platforms.</p><img>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card" style="background: rgba(255,255,255,0);border-style: none;">
-                    <div class="card-body" style="background: rgb(20,21,30);border: 1px solid rgb(21,25,33);border-radius: 15px;color: var(--bs-body-bg);margin-bottom: 50px;padding-top: 15px;padding-right: 15px;padding-bottom: 15px;padding-left: 15px;">
-                        <h4 class="card-title" style="color: #c07bff;text-align: center;font-size: 32px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-text-right icon" style="color: #ad95ed;font-size: 40px;">
-                                <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"></path>
-                            </svg><br>GRF Editor</h4>
-                        <p class="card-text" style="text-align: left;"><span style="color: rgb(224, 224, 224); background-color: rgb(20, 21, 30);">Edit Legacy Console GRF/GRH files with our easy-to-use GRF Editor, supporting S-GRF editing as well.</span></p><img>
+                    <div class="card-body" style="background: Transparent;color: var(--bs-body-bg);margin-bottom: 50px;padding-top: 15px;padding-right: 15px;padding-bottom: 15px;padding-left: 15px;border-style: none;">
+                        <h4 class="card-title" style="color: #c07bff;text-align: center;font-size: 32px;"><img src="assets/img/TOOL_ICONS/GRF_Editor.svg" style="width: 50px;height: 50px;margin-bottom: 10px;"><br>GRF Editor</h4>
+                        <p class="description" style="margin-bottom: 30px;text-align: left;">Edit Legacy Console GRF/GRH files with our easy-to-use GRF Editor, supporting S-GRF editing as well.</p><img>
                     </div>
                 </div>
             </div>
-        </div><button class="btn btn-primary" type="button" style="background: rgb(25,25,25);margin-top: 25px;box-shadow: 0px 0px 5px #ad95ed;color: #ad95ed;">Explore All Features&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right icon" style="color: #ad95ed;">
+        </div><button class="btn btn-primary" type="button" style="background: #232430;margin-top: 25px;box-shadow: 0px 0px 5px #ad95ed;color: #ad95ed;">Explore All Features&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right icon" style="color: #ad95ed;">
                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
             </svg></button>
     </div>
-    <div class="container text-center" style="background: #181922;margin-top: 50px;padding-left: 30px;padding-right: 30px;border-radius: 25px;border: 2px solid rgb(66,67,88);margin-bottom: 50px;padding-bottom: 20px;">
+    <div class="container text-center" style="background: #232430;margin-top: 50px;padding-left: 30px;padding-right: 30px;border-radius: 25px;border: 2px solid rgb(66,67,88);margin-bottom: 50px;padding-bottom: 20px;">
         <div class="intro"></div>
         <div class="row justify-content-evenly align-items-stretch features">
             <div class="col-md-12 text-center">
@@ -139,60 +244,50 @@
             </div>
             <div class="col">
                 <div class="text-center d-flex justify-content-center flex-wrap justify-content-xxl-center" style="margin-bottom: 5px;">
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;background: #232430;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-keyboard-fill" style="width: 55px;height: 55px;color: #ad95ed;">
-                            <path d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm13 .25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25M2.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 8.75v-.5A.25.25 0 0 0 2.75 8zM4 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 5 8.75v-.5A.25.25 0 0 0 4.75 8h-.5a.25.25 0 0 0-.25.25M6.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 7 8.75v-.5A.25.25 0 0 0 6.75 8zM8 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 9 8.75v-.5A.25.25 0 0 0 8.75 8h-.5a.25.25 0 0 0-.25.25M13.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zm-3-2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zm.75 2.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25M11.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zM9 6.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5A.25.25 0 0 0 9.75 6h-.5a.25.25 0 0 0-.25.25M7.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 8 6.75v-.5A.25.25 0 0 0 7.75 6zM5 6.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 6 6.75v-.5A.25.25 0 0 0 5.75 6h-.5a.25.25 0 0 0-.25.25M2.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5A.25.25 0 0 0 4 6.75v-.5A.25.25 0 0 0 3.75 6zM2 10.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25M4.25 10a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25z"></path>
-                        </svg></div>
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;background: #232430;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-laptop" style="width: 55px;height: 55px;color: #ad95ed;">
-                            <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"></path>
-                        </svg></div>
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;background: #232430;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-xbox" style="width: 54.4px;height: 54.4px;color: #ad95ed;">
-                            <path d="M7.202 15.967a7.987 7.987 0 0 1-3.552-1.26c-.898-.585-1.101-.826-1.101-1.306 0-.965 1.062-2.656 2.879-4.583C6.459 7.723 7.897 6.44 8.052 6.475c.302.068 2.718 2.423 3.622 3.531 1.43 1.753 2.088 3.189 1.754 3.829-.254.486-1.83 1.437-2.987 1.802-.954.301-2.207.429-3.239.33Zm-5.866-3.57C.589 11.253.212 10.127.03 8.497c-.06-.539-.038-.846.137-1.95.218-1.377 1.002-2.97 1.945-3.95.401-.417.437-.427.926-.263.595.2 1.23.638 2.213 1.528l.574.519-.313.385C4.056 6.553 2.52 9.086 1.94 10.653c-.315.852-.442 1.707-.306 2.063.091.24.007.15-.3-.319Zm13.101.195c.074-.36-.019-1.02-.238-1.687-.473-1.443-2.055-4.128-3.508-5.953l-.457-.575.494-.454c.646-.593 1.095-.948 1.58-1.25.381-.237.927-.448 1.161-.448.145 0 .654.528 1.065 1.104a8.372 8.372 0 0 1 1.343 3.102c.153.728.166 2.286.024 3.012a9.495 9.495 0 0 1-.6 1.893c-.179.393-.624 1.156-.82 1.404-.1.128-.1.127-.043-.148ZM7.335 1.952c-.67-.34-1.704-.705-2.276-.803a4.171 4.171 0 0 0-.759-.043c-.471.024-.45 0 .306-.358A7.778 7.778 0 0 1 6.47.128c.8-.169 2.306-.17 3.094-.005.85.18 1.853.552 2.418.9l.168.103-.385-.02c-.766-.038-1.88.27-3.078.853-.361.176-.676.316-.699.312a12.246 12.246 0 0 1-.654-.319Z"></path>
-                        </svg></div>
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;background: #232430;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-playstation" style="width: 62.9px;height: 62.9px;color: #ad95ed;">
-                            <path d="M15.858 11.451c-.313.395-1.079.676-1.079.676l-5.696 2.046v-1.509l4.192-1.493c.476-.17.549-.412.162-.538-.386-.127-1.085-.09-1.56.08l-2.794.984v-1.566l.161-.054s.807-.286 1.942-.412c1.135-.125 2.525.017 3.616.43 1.23.39 1.368.962 1.056 1.356ZM9.625 8.883v-3.86c0-.453-.083-.87-.508-.988-.326-.105-.528.198-.528.65v9.664l-2.606-.827V2c1.108.206 2.722.692 3.59.985 2.207.757 2.955 1.7 2.955 3.825 0 2.071-1.278 2.856-2.903 2.072Zm-8.424 3.625C-.061 12.15-.271 11.41.304 10.984c.532-.394 1.436-.69 1.436-.69l3.737-1.33v1.515l-2.69.963c-.474.17-.547.411-.161.538.386.126 1.085.09 1.56-.08l1.29-.469v1.356l-.257.043a8.454 8.454 0 0 1-4.018-.323Z"></path>
-                        </svg></div>
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-top: 10px;background: #232430;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-nintendo-switch" style="width: 55px;height: 55px;color: #ad95ed;">
-                            <path d="M9.34 8.005c0-4.38.01-7.972.023-7.982C9.373.01 10.036 0 10.831 0c1.153 0 1.51.01 1.743.05 1.73.298 3.045 1.6 3.373 3.326.046.242.053.809.053 4.61 0 4.06.005 4.537-.123 4.976-.022.076-.048.15-.08.242a4.136 4.136 0 0 1-3.426 2.767c-.317.033-2.889.046-2.978.013-.05-.02-.053-.752-.053-7.979Zm4.675.269a1.621 1.621 0 0 0-1.113-1.034 1.609 1.609 0 0 0-1.938 1.073 1.9 1.9 0 0 0-.014.935 1.632 1.632 0 0 0 1.952 1.107c.51-.136.908-.504 1.11-1.028.11-.285.113-.742.003-1.053M3.71 3.317c-.208.04-.526.199-.695.348-.348.301-.52.729-.494 1.232.013.262.03.332.136.544.155.321.39.556.712.715.222.11.278.123.567.133.261.01.354 0 .53-.06.719-.242 1.153-.94 1.03-1.656-.142-.852-.95-1.422-1.786-1.256Z"></path>
-                            <path d="M3.425.053a4.136 4.136 0 0 0-3.28 3.015C0 3.628-.01 3.956.005 8.3c.01 3.99.014 4.082.08 4.39.368 1.66 1.548 2.844 3.224 3.235.22.05.497.06 2.29.07 1.856.012 2.048.009 2.097-.04.05-.05.053-.69.053-7.94 0-5.374-.01-7.906-.033-7.952-.033-.06-.09-.063-2.03-.06-1.578.004-2.052.014-2.26.05Zm3 14.665-1.35-.016c-1.242-.013-1.375-.02-1.623-.083a2.81 2.81 0 0 1-2.08-2.167c-.074-.335-.074-8.579-.004-8.907a2.845 2.845 0 0 1 1.716-2.05c.438-.176.64-.196 2.058-.2l1.282-.003v13.426Z"></path>
-                        </svg></div>
+                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;background: #232430;"><img style="width: 70px;height: 70px;" src="assets/img/PLATFORMS/MINECRAFT/Java_Platform_Icon.svg"></div>
+                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;background: #232430;"><img style="width: 70px;height: 70px;" src="assets/img/PLATFORMS/MINECRAFT/Bedrock_Platform_Icon.svg"></div>
+                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;background: #232430;"><img style="width: 63.5px;height: 63.5px;" src="assets/img/PLATFORMS/MINECRAFT/Xbox_Platform_Icon.svg"></div>
+                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;background: #232430;"><img style="width: 68px;height: 68px;" src="assets/img/PLATFORMS/MINECRAFT/PlayStation_Platform_Icon.svg"></div>
+                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-top: 10px;background: #232430;"><img style="width: 69px;height: 69px;" src="assets/img/PLATFORMS/MINECRAFT/Nintendo_Wii_U_Platform_Icon.svg"></div>
+                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;background: #232430;"><img style="width: 60px;height: 60px;" src="assets/img/PLATFORMS/MINECRAFT/Nintendo_Switch_Platform_Icon.svg"></div>
                 </div>
             </div>
         </div>
-        <div class="row" style="background: #121319;border-color: #121319;border-radius: 15px;">
+        <div class="row" style="background: #232430;border-color: #121319;border-radius: 15px;">
             <div class="col-md-4">
                 <div class="card" style="border-style: none;">
-                    <div class="card-body" style="background: #121319;color: rgb(255,255,255);">
+                    <div class="card-body" style="background: #232430;color: rgb(255,255,255);">
                         <h4 class="card-title" style="text-align: center;color: #ad95ed;">Java</h4>
-                        <p class="card-text" style="text-align: left;">1.3.0 - 1.21<br><br><strong>Platforms:</strong><br>• Windows<br>• macOS<br>• Linux<br>• Android (via PoJav)</p>
+                        <p class="card-text" style="text-align: left;"><strong>Platforms:</strong><br>• Windows<br>• macOS<br>• Linux<br>• Android (via PoJav)<br><br>1.3.0 - 1.21</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card" style="border-style: none;">
-                    <div class="card-body" style="background: #121319;color: rgb(255,255,255);">
+                    <div class="card-body" style="background: #232430;color: rgb(255,255,255);">
                         <h4 class="card-title" style="text-align: center;color: #ad95ed;">Bedrock</h4>
-                        <p class="card-text" style="text-align: left;">&nbsp;1.0.0 - 1.20<br><br><strong>Platforms:</strong><br>• Windows / macOS / Linux<br>• Android<br>• iOS / iPadOS<br><br><strong>With Realms Transfer</strong><br>• Xbox One / Series X &amp; S<br>• PlayStation®4 / 5<br>• Nintendo Switch</p>
+                        <p class="card-text" style="text-align: left;"><strong>Platforms:</strong><br>• Windows / macOS / Linux<br>• Android<br>• iOS / iPadOS<br><br><strong>With Realms Transfer</strong><br>• Xbox One / Series X &amp; S<br>• PlayStation®4 / 5<br>• Nintendo Switch<br><br>&nbsp;1.0.0 - 1.20</p>
                         <p class="card-text"></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card" style="border-style: none;">
-                    <div class="card-body" style="background: #121319;color: rgb(255,255,255);">
+                    <div class="card-body" style="background: #232430;color: rgb(255,255,255);">
                         <h4 class="card-title" style="text-align: center;color: #ad95ed;">Console</h4>
-                        <p class="card-text" style="text-align: left;">TU0 - TU75 / 1.00 - 1.84 / Patch 1 - Patch 43<br><br><strong>Platforms:</strong><br>• Xbox 360<br>• PlayStation®3<br>• PlayStation®Vita<br>• Wii U</p>
+                        <p class="card-text" style="text-align: left;">Xbox:<br>• Xbox 360 | TU0 - TU75<br>• Xbox One | CU0 - CU58<br><br>PlayStation:<br>• PlayStation®3 | 1.00 - 1.84 <br>• PlayStation®Vita&nbsp;| 1.00 - 1.84<br>• PlayStation®4 | 1.00 - 1.95<br><br>Nintendo:<br>• Nintendo Switch | 1.0.0 - 1.0.17<br>• Nintendo Wii U | Patch 1 - Patch 43</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container" style="background: #181922;margin-top: 50px;padding-left: 30px;padding-right: 30px;border-radius: 20px;padding-bottom: 20px;border: 2px solid rgb(66,67,88);margin-bottom: 50px;">
+    <div class="container" style="background: #232430;margin-top: 50px;padding-left: 30px;padding-right: 30px;border-radius: 20px;padding-bottom: 20px;border: 2px solid rgb(66,67,88);margin-bottom: 50px;">
         <div class="intro">
             <h2 class="text-center" style="margin-bottom: 30px;color: #c07bff;margin-top: 20px;">Why Choose Lodestone?</h2>
         </div>
         <div class="row justify-content-evenly align-items-stretch features">
             <div class="col">
-                <div class="row" data-aos="fade-up" style="box-shadow: 0px 0px rgb(250,36,38);background: rgb(20,21,30);border-radius: 10px;border-width: 10px;padding-right: 10px;padding-left: 10px;">
+                <div class="row" data-aos="fade-up" style="box-shadow: 0px 0px rgb(250,36,38);background: Transparent;border-radius: 10px;border-width: 10px;padding-right: 10px;padding-left: 10px;">
                     <div class="col-md-3">
                         <h3 class="name" style="color: rgb(255,255,255);text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><i class="fa fa-globe icon" style="color: #ad95ed;font-size: 40px;"></i><br>Compatible</h3>
                         <p class="description" style="margin-bottom: 30px;text-align: center;">Lodestone works everywhere, even on the web. The project is based on WASM, enabling it to reach everyone, including macOS, Windows, Linux, Android, and more. It will always be there when you need it.</p>
@@ -212,7 +307,7 @@
                         <p class="description" style="margin-bottom: 30px;text-align: center;">The toolset will continually expand and evolve in sync with new Minecraft updates. All users will receive the latest updates simultaneously, seamlessly delivered over the air. No more worries about staying up-to-date.</p>
                     </div>
                 </div>
-                <div class="row" data-aos="fade-up" style="box-shadow: 0px 0px rgb(250,36,38);margin-top: 50px;background: rgb(20,21,30);border-width: 10px;border-radius: 10px;padding-right: 10px;padding-left: 10px;">
+                <div class="row" data-aos="fade-up" style="box-shadow: 0px 0px rgb(250,36,38);margin-top: 50px;background: Transparent;border-width: 10px;border-radius: 10px;padding-right: 10px;padding-left: 10px;">
                     <div class="col-md-3">
                         <h3 class="name" style="color: rgb(255,255,255);text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><i class="fa fa-plus icon" style="color: #ad95ed;font-size: 40px;"></i><br>Add-Ons</h3>
                         <p class="description" style="margin-bottom: 30px;text-align: center;">Extensions, plug-ins, and extension scripts are all supported within the Minecraft Manipulator! This enables users to extend functionality and build upon the modules within the toolset, making it fun for anyone to create for it!</p>
@@ -234,7 +329,7 @@
                         <p class="description" style="margin-bottom: 30px;text-align: center;">Supporting multiple languages enables us to connect with people worldwide, regardless of their location. We take pride in supporting all major languages. Being open-source, we also benefit from contributions from the community.</p>
                     </div>
                 </div>
-                <div class="row" data-aos="fade-up" style="box-shadow: 0px 0px rgb(250,36,38);margin-top: 50px;background: rgb(20,21,30);border-width: 10px;border-radius: 10px;padding-right: 10px;padding-left: 10px;">
+                <div class="row" data-aos="fade-up" style="box-shadow: 0px 0px rgb(250,36,38);margin-top: 50px;background: Transparent;border-width: 10px;border-radius: 10px;padding-right: 10px;padding-left: 10px;">
                     <div class="col">
                         <h3 class="name" style="color: #c07bff;text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;font-weight: bold;"><i class="fa fa-github icon" style="color: #ad95ed;font-size: 40px;"></i><br>No Sketchy Servers</h3>
                         <p class="description" style="margin-bottom: 35px;text-align: center;">We do not hide secret servers or loggers of any kind inside of our work. We are 100% open-source and we highly encourage <br>the community to learn how the toolset works, pull requests are also encouraged!</p>
@@ -243,7 +338,7 @@
             </div>
         </div>
     </div>
-    <section class="features-boxed" style="background: rgb(22,23,45);margin-top: 80px;">
+    <section class="features-boxed" style="background: #1b1b21;margin-top: 80px;">
         <div class="col" style="background: #6100ff;text-align: center;box-shadow: 0px 0px 16px 4px rgb(169,36,250);padding-top: 5px;margin-bottom: 35px;">
             <div class="box" style="background: #6100ff;">
                 <h3 class="name" style="color: rgb(255,255,255);text-align: center;font-weight: bold;font-size: 25px;margin-bottom: 5px;margin-top: 55px;">It's As Easy As One Click!</h3>
@@ -252,7 +347,7 @@
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
                 </svg></button>
         </div>
-        <footer class="footer-dark" style="background: rgb(15,16,20);">
+        <footer class="footer-dark" style="background: #1b1b21;">
             <div class="container">
                 <div class="row justify-content-between align-items-stretch">
                     <div class="col-sm-6 col-md-3 item" style="width: 220px;">
@@ -290,6 +385,7 @@
             <p class="copyright" style="color: rgb(217,217,217);">Project Lodestone © 2024</p>
         </footer>
     </section>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/aos.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
