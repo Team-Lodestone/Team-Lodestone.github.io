@@ -68,3 +68,72 @@
   margin-bottom: 20px;
 }
 
+@media (max-width: 300px) {
+  element.style {
+    font-size: 98.5px !important;
+  }
+}
+
+element.style {
+  /*font-size: 90px !important;*/
+}
+
+@media (min-width: 575px) {
+  #whyChooseLodestone {
+    width: 95%;
+    border-radius: 20px;
+  }
+}
+
+span {
+  background-color: transparent !important;
+}
+
+@media (max-width: 576px) {
+  .testing {
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+}
+
+.coolHoverThing {
+  margin: 5px;
+  /*max-width: 32%;*/
+  /*height: 30%;*/
+  /*width: auto;*/
+  /*max-height: 30%;*/
+  transition: border 0.1s ease-in-out;
+  border: 3px solid rgb(66,67,88);
+  border-radius: 20px;
+}
+
+.coolHoverThing::hover {
+}
+
+.coolHoverThing:hover {
+  /*animation: fadeBorder 0.1s linear forwards;*/
+  border: 3px solid rgb(169, 145, 194);
+}
+
+@keyframes fadeBorder {
+  0% {
+    border: 3px solid rgb(66,67,88);
+  }
+  100% {
+    border: 3px solid rgb(169, 145, 194);
+  }
+}
+
+@keyframes unfadeBorder {
+  0% {
+    border: 3px solid rgb(169, 145, 194);
+  }
+}
+
+@media (min-width: 768px) {
+  .coolHoverThing {
+    width: 32%;
+    /*height: 32%;*/
+  }
+}
+
