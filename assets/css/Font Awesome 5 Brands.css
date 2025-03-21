@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'Font Awesome 5 Brands';
+	src: url(../../assets/fonts/Font%20Awesome%205%20Brands-ef769ae173a15dd4ccd43cf9c350fcb3.eot) format('embedded-opentype'),
+	url(../../assets/fonts/Font%20Awesome%205%20Brands-ef769ae173a15dd4ccd43cf9c350fcb3.eot) format('embedded-opentype'),
+	url(../../assets/fonts/Font%20Awesome%205%20Brands-a2b2441ad7b042d9d98b4feb757eacb8.woff2) format('woff2'),
+	url(../../assets/fonts/Font%20Awesome%205%20Brands-2d6413bd72495317dda9f228997f82b7.woff) format('woff'),
+	url(../../assets/fonts/Font%20Awesome%205%20Brands-bca52e355b3c231e2f06c4f802c6674d.ttf) format('truetype'),
+	url(../../assets/fonts/Font%20Awesome%205%20Brands-1f416457c27b780c87e1fcd83f132a32.svg) format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: auto;
+}

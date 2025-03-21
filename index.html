@@ -1,402 +1,175 @@
 <!DOCTYPE html>
-<html class="text-dark" data-bs-theme="auto" lang="en" style="height: 2150px;font-family: 'Motiva Sans Test';">
+<html data-bs-theme="dark" lang="en" data-bss-forced-theme="dark">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Lodestone - Edit, Convert &amp; Transform Minecraft Worlds!</title>
-    <link rel="canonical" href="https://team-lodestone.github.io/">
-    <meta property="og:url" content="https://team-lodestone.github.io/">
-    <meta name="description" content="The first open-source all-in-one Minecraft tool, compatible with all versions and editions!">
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "WebSite",
-            "name": "Project Lodestone",
-            "url": "https://team-lodestone.github.io"
-        }
-    </script>
-    <script>
-        (function() {
-
-            // JavaScript snippet handling Dark/Light mode switching
-
-            const getStoredTheme = () => localStorage.getItem('theme');
-            const setStoredTheme = theme => localStorage.setItem('theme', theme);
-            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
-
-            const getPreferredTheme = () => {
-
-                if (forcedTheme) return forcedTheme;
-
-                const storedTheme = getStoredTheme();
-                if (storedTheme) {
-                    return storedTheme;
-                }
-
-                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
-
-                if (pageTheme) {
-                    return pageTheme;
-                }
-
-                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
-
-            const setTheme = theme => {
-                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.documentElement.setAttribute('data-bs-theme', 'dark');
-                } else {
-                    document.documentElement.setAttribute('data-bs-theme', theme);
-                }
-            }
-
-            setTheme(getPreferredTheme());
-
-            const showActiveTheme = (theme, focus = false) => {
-                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
-
-                if (!themeSwitchers.length) return;
-
-                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-                    element.classList.remove('active');
-                    element.setAttribute('aria-pressed', 'false');
-                });
-
-                for (const themeSwitcher of themeSwitchers) {
-
-                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
-
-                    if (btnToActivate) {
-                        btnToActivate.classList.add('active');
-                        btnToActivate.setAttribute('aria-pressed', 'true');
-                    }
-                }
-            }
-
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-                const storedTheme = getStoredTheme();
-                if (storedTheme !== 'light' && storedTheme !== 'dark') {
-                    setTheme(getPreferredTheme());
-                }
-            });
-
-            window.addEventListener('DOMContentLoaded', () => {
-                showActiveTheme(getPreferredTheme());
-
-                document.querySelectorAll('[data-bs-theme-value]')
-                    .forEach(toggle => {
-                        toggle.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            const theme = toggle.getAttribute('data-bs-theme-value');
-                            setStoredTheme(theme);
-                            setTheme(theme);
-                            showActiveTheme(theme);
-                        })
-                    })
-            });
-        })();
-    </script>
+    <title>Team-Lodestone.github.io</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Inter.css">
+    <link rel="stylesheet" href="assets/css/Lato.css">
     <link rel="stylesheet" href="assets/css/Lobster.css">
     <link rel="stylesheet" href="assets/css/Motiva%20Sans%20Test.css">
+    <link rel="stylesheet" href="assets/css/Font%20Awesome%205%20Brands.css">
+    <link rel="stylesheet" href="assets/css/Font%20Awesome%205%20Free.css">
+    <link rel="stylesheet" href="assets/css/FontAwesome.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
-    <link rel="stylesheet" href="assets/css/aos.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
-    <link rel="stylesheet" href="assets/css/Features-Clean.css">
-    <link rel="stylesheet" href="assets/css/Features-Small-Icons-icons.css">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="assets/css/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/css/effect/Features-Boxed.css">
+    <link rel="stylesheet" href="assets/css/fonts/font-awesome.min-1.css">
+    <link rel="stylesheet" href="assets/css/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/css/Navbar-Centered-Links-icons.css">
 </head>
 
-<body style="color: rgb(224,224,224);font-family: 'Motiva Sans Test';/*background: linear-gradient(180deg, rgba(31,31,38,1) 50%, rgba(27,27,33,1) 100%);*/">
-    <nav class="navbar navbar-expand-lg fixed-top bg-secondary navigation-clean navbar-light" style="background: #1b1b21;color: rgb(224,224,224);">
-        <div class="container"><a class="navbar-brand link-body-emphasis" href="#"><img src="assets/img/LOGO/Lodestone_Logo.svg" style="height: 25px;width: 25px;margin-right: 2px;">Project Lodestone</a><button data-bs-toggle="collapse" class="navbar-toggler justify-content-sm-center align-items-sm-center" data-bs-target="#navcol-1" style="border-style: none;width: 40px;height: 40px;background: #232430;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;"><span class="visually-hidden">Toggle navigation</span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 35px;color: #ad95ed;">
-                    <path d="M4 6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6C20 6.55228 19.5523 7 19 7H5C4.44772 7 4 6.55228 4 6Z" fill="currentColor"></path>
-                    <path d="M4 18C4 17.4477 4.44772 17 5 17H19C19.5523 17 20 17.4477 20 18C20 18.5523 19.5523 19 19 19H5C4.44772 19 4 18.5523 4 18Z" fill="currentColor"></path>
-                    <path d="M11 11C10.4477 11 10 11.4477 10 12C10 12.5523 10.4477 13 11 13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H11Z" fill="currentColor"></path>
-                </svg><code style="color: rgb(224,224,224);"></code></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<body style="width: auto;height: auto;">
+    <nav class="navbar navbar-expand-md bg-body-secondary py-3" style="border-style: none;margin-bottom: 55px;">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#" style="border-style: none;"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><img src="assets/img/logos/Resized_L_Of_Lodestone_GLOW.svg"></span><span><strong>Project Lodestone - Dev Branch Website</strong></span></a><button data-bs-toggle="toggle" data-bs-target=".navbar-toggler" class="navbar-toggler" style="border-style: none;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon" style="margin-right: 8px;"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link link-info" href="index.html" style="font-size: 18px;" target="_top">Home</a></li>
-                    <li class="nav-item"><a class="nav-link link-body-emphasis" href="#" style="color: rgb(235,235,235);font-size: 18px;">Guides</a></li>
-                    <li class="nav-item"><a class="nav-link link-body-emphasis" href="https://github.com/team-lodestone/documentation" style="color: rgb(235,235,235);font-size: 18px;">Documentation</a></li>
-                    <li class="nav-item"><a class="nav-link link-body-emphasis" href="download/index.html" style="color: rgb(235,235,235);font-size: 18px;">Download</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link link-body-emphasis" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(235,235,235);font-size: 18px;">Features</a>
-                        <div class="dropdown-menu dropdown-menu-dark text-bg-secondary"><a class="dropdown-item link-primary" href="#"><img src="assets/img/TOOL_ICONS/NBT_Editor.svg" style="width: 26px;height: 26px;margin-right: 5px;">NBT Editor</a><a class="dropdown-item link-primary" href="#"><img src="assets/img/TOOL_ICONS/Sculptor.svg" style="width: 26px;height: 26px;margin-right: 5px;">Sculptor</a><a class="dropdown-item link-primary" href="#"><img src="assets/img/TOOL_ICONS/World_Converter.svg" style="width: 26px;height: 26px;margin-right: 5px;">Converter</a><a class="dropdown-item link-primary" href="#"><img src="assets/img/TOOL_ICONS/GRF_Editor.svg" style="width: 26px;height: 26px;margin-right: 5px;">GRF Editor</a></div>
-                    </li>
-                </ul>
+                    <li class="nav-item"><a class="nav-link" href="index.html" style="border-style: none;color: var(--bs-primary);"><strong>Home</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://team-lodestone.github.io/Documentation/" style="border-style: none;"><strong>Documentation</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://team-lodestone.github.io/Documentation/" style="border-style: none;"><strong>Tutorials</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" style="border-style: none;" target="_blank"><strong>Download</strong></a></li>
+                </ul><a class="btn btn-primary ms-md-2" role="button" href="https://github.com/team-lodestone/" style="background: transparent;border-style: none;padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;"><svg class="bi bi-github text-secondary" fill="currentColor" height="1em" style="font-size:24px;" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"></path></svg></a><a class="btn btn-primary ms-md-2" role="button" href="https://discord.gg/umHRdX6R7V" style="background: transparent;border-style: none;padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;"><svg class="bi bi-discord text-secondary" fill="currentColor" height="1em" style="font-size:24px;" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"></path></svg></a>
             </div>
         </div>
     </nav>
     <div class="container">
-        <div class="row" style="padding-top: 140px;">
-            <div class="col" style="text-align: center;">
-                <h1 style="color: #c9b9ef;box-shadow: 0px 0px;font-size: calc(min(25vw - 20px, 118px));text-shadow: 0px 0px 12px;font-family: Lobster, serif;padding-bottom: 20px;text-align: center;padding-right: 10px;padding-left: 10px;margin-bottom: 25px;@media screen and (min-width: 321px);/*@media (max-width: 200px) { font-size: 90px;*/">Lodestone</h1>
-                <h1 style="color: #c07bff;box-shadow: 0px 0px;font-size: 30px;text-shadow: 0px 0px 3px;"><strong>Edit</strong>, <strong>Convert </strong>and <strong>Transform </strong>Minecraft Worlds.</h1>
-                <p class="text-muted" style="text-align: center;margin-bottom: 5px;font-size: 16px;text-shadow: 0px 0px 1px;">The first open-source all-in-one Minecraft tool, compatible with virtually all platforms, versions and editions. <br>Created by the community, for the community. An all-in-one multi-platform masterpiece.</p>
-                <div class="row pulse animated" style="box-shadow: 0px 0px rgb(250,36,38);border-radius: 20px;background: Transparent;padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;border-width: 2px;border-style: none;margin-bottom: 20px;">
-                    <div class="col d-flex d-xxl-flex justify-content-center justify-content-xxl-center">
-                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 60px;height: 60px;margin-right: 6px;margin-top: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-microsoft icon" style="color: #ad95ed;font-size: 40px;width: 40px;height: 40px;">
-                                <path d="M7.462 0H0v7.19h7.462zM16 0H8.538v7.19H16zM7.462 8.211H0V16h7.462zm8.538 0H8.538V16H16z"></path>
-                            </svg></div>
-                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 60px;height: 60px;margin-right: 6px;margin-top: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-apple icon" style="color: #ad95ed;font-size: 40px;width: 40px;height: 40px;">
-                                <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"></path>
-                                <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"></path>
-                            </svg></div>
-                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 60px;height: 60px;margin-right: 6px;margin-top: 10px;"><i class="fa fa-linux icon" style="color: #ad95ed;font-size: 40px;width: 40px;height: 40px;"></i></div>
-                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 60px;height: 60px;margin-right: 6px;margin-top: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-android2 icon" style="color: #ad95ed;font-size: 40px;width: 40px;height: 40px;">
-                                <path d="m10.213 1.471.691-1.26c.046-.083.03-.147-.048-.192-.085-.038-.15-.019-.195.058l-.7 1.27A4.832 4.832 0 0 0 8.005.941c-.688 0-1.34.135-1.956.404l-.7-1.27C5.303 0 5.239-.018 5.154.02c-.078.046-.094.11-.049.193l.691 1.259a4.25 4.25 0 0 0-1.673 1.476A3.697 3.697 0 0 0 3.5 5.02h9c0-.75-.208-1.44-.623-2.072a4.266 4.266 0 0 0-1.664-1.476ZM6.22 3.303a.367.367 0 0 1-.267.11.35.35 0 0 1-.263-.11.366.366 0 0 1-.107-.264.37.37 0 0 1 .107-.265.351.351 0 0 1 .263-.11c.103 0 .193.037.267.11a.36.36 0 0 1 .112.265.36.36 0 0 1-.112.264m4.101 0a.351.351 0 0 1-.262.11.366.366 0 0 1-.268-.11.358.358 0 0 1-.112-.264c0-.103.037-.191.112-.265a.367.367 0 0 1 .268-.11c.104 0 .19.037.262.11a.367.367 0 0 1 .107.265c0 .102-.035.19-.107.264M3.5 11.77c0 .294.104.544.311.75.208.204.46.307.76.307h.758l.01 2.182c0 .276.097.51.292.703a.961.961 0 0 0 .7.288.973.973 0 0 0 .71-.288.95.95 0 0 0 .292-.703v-2.182h1.343v2.182c0 .276.097.51.292.703a.972.972 0 0 0 .71.288.973.973 0 0 0 .71-.288.95.95 0 0 0 .292-.703v-2.182h.76c.291 0 .54-.103.749-.308.207-.205.311-.455.311-.75V5.365h-9v6.404Zm10.495-6.587a.983.983 0 0 0-.702.278.91.91 0 0 0-.293.685v4.063c0 .271.098.501.293.69a.97.97 0 0 0 .702.284c.28 0 .517-.095.712-.284a.924.924 0 0 0 .293-.69V6.146a.91.91 0 0 0-.293-.685.995.995 0 0 0-.712-.278m-12.702.283a.985.985 0 0 1 .712-.283c.273 0 .507.094.702.283a.913.913 0 0 1 .293.68v4.063a.932.932 0 0 1-.288.69.97.97 0 0 1-.707.284.986.986 0 0 1-.712-.284.924.924 0 0 1-.293-.69V6.146c0-.264.098-.491.293-.68Z"></path>
-                            </svg></div>
-                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 60px;height: 60px;margin-top: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-globe icon" style="color: #ad95ed;font-size: 40px;width: 40px;height: 40px;">
-                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472M3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"></path>
-                            </svg></div>
-                    </div>
-                </div>
-                <div class="progress pulse animated" style="height: 32px;">
-                    <div class="progress-bar bg-primary" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100" style="width: 18%;">18%</div>
-                </div><a class="btn btn-primary link-body-emphasis" role="button" style="margin-top: 25px;box-shadow: 0px 0px 15px #9e86de;margin-bottom: 15px;font-size: 18px;height: 50px;border-color: #9e86de;" href="https://discord.gg/umHRdX6R7V"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-discord" style="font-size: 24px;">
-                        <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"></path>
-                    </svg>&nbsp;<strong>View Our Progress</strong></a>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row text-bg-secondary" data-aos="fade-up" style="box-shadow: 0px 0px rgb(250,36,38);border-radius: 20px;padding-top: 15px;padding-bottom: 15px;margin-top: 50px;padding-right: 15px;padding-left: 15px;margin-bottom: 50px;border: 1px solid rgb(127,127,127) ;">
-            <div class="col-md-3">
-                <h3 class="text-info name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;font-weight: bold;">Ready For 1.21</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: center;">Includes support for the latest version of Minecraft.</p>
-            </div>
-            <div class="col-md-3">
-                <h3 class="text-info name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;font-weight: bold;">Always Growing</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: center;">Getting better every single day, with the help of the community</p>
-            </div>
-            <div class="col-md-3">
-                <h3 class="text-info name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;font-weight: bold;">Free For Everyone</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: center;">Fully free to use. No secrets, no tricks.&nbsp;</p>
-            </div>
-            <div class="col-md-3">
-                <h3 class="text-info name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;font-weight: bold;">Easy To Use</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: center;">Simple for everyone to use, including those with visual impairments.</p>
-            </div>
-        </div>
-        <h2 class="text-center" data-aos="fade-up" style="margin-bottom: 30px;color: #c07bff;margin-top: 25px;font-weight: bold;">One Solution for Everything</h2>
-        <div class="row" data-aos="fade-up" style="box-shadow: 0px 0px rgb(250,36,38);padding-bottom: 15px;padding-right: 15px;padding-left: 15px;background: Transparent;margin: -2px;">
-            <div class="col-md-3">
-                <div class="card" style="border-style: none;"></div>
-                <div class="row">
-                    <div class="col d-xxl-flex justify-content-xxl-center">
-                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 70px;height: 70px;"><img class="justify-content-center align-items-center align-content-center align-self-center" src="assets/img/TOOL_ICONS/NBT_Editor.svg" style="width: 50px;height: 50px;"></div>
-                    </div>
-                </div>
-                <h4 class="text-info" style="text-align: center;font-size: 32px;">NBT Editor</h4>
-                <p class="text-center text-body description" style="margin-bottom: 30px;text-align: left;">The most powerful NBT Editor in any open-source tool. Supporting S-NBT editing and extensions/plug-ins.</p>
-            </div>
-            <div class="col-md-3">
-                <div class="card" style="border-style: none;"></div>
-                <div class="row">
-                    <div class="col d-xxl-flex justify-content-xxl-center">
-                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 70px;height: 70px;"><img class="justify-content-center align-items-center align-content-center align-self-center" src="assets/img/TOOL_ICONS/Sculptor.svg" style="width: 50px;height: 50px;"></div>
-                    </div>
-                </div>
-                <h4 class="text-info" style="text-align: center;font-size: 32px;">Sculptor</h4>
-                <p class="text-center text-body description" style="margin-bottom: 30px;text-align: left;">Prune, copy, paste, and edit worlds without any external tools. The go-to feature for builders and building teams.</p>
-            </div>
-            <div class="col-md-3">
-                <div class="card" style="border-style: none;"></div>
-                <div class="row">
-                    <div class="col d-xxl-flex justify-content-xxl-center">
-                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 70px;height: 70px;"><img class="justify-content-center align-items-center align-content-center align-self-center" src="assets/img/TOOL_ICONS/World_Converter.svg" style="width: 50px;height: 50px;"></div>
-                    </div>
-                </div>
-                <h4 class="text-info" style="text-align: center;font-size: 32px;">Converter</h4>
-                <p class="text-center text-body description" style="margin-bottom: 30px;text-align: left;">Convert worlds in seconds with the first open-source world converter that supports all platforms.</p>
-            </div>
-            <div class="col-md-3">
-                <div class="card" style="border-style: none;"></div>
-                <div class="row">
-                    <div class="col d-xxl-flex justify-content-xxl-center">
-                        <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 70px;height: 70px;"><img class="justify-content-center align-items-center align-content-center align-self-center" src="assets/img/TOOL_ICONS/GRF_Editor.svg" style="width: 50px;height: 50px;"></div>
-                    </div>
-                </div>
-                <h4 class="text-info" style="text-align: center;font-size: 32px;">GRF Editor</h4>
-                <p class="text-center text-body description" style="margin-bottom: 30px;text-align: left;">Edit Legacy Console GRF/GRH files with our easy-to-use GRF Editor, supporting S-GRF editing as well.</p>
+        <div class="row">
+            <div class="col" style="text-align:center;padding-right:50px;padding-left:50px;">
+                <h1 class="text-primary" style="font-size: 48px;text-align: left;"><strong>Project Lodestone</strong></h1>
+                <h1 class="text-secondary-emphasis" style="font-size: 20px;text-align: left;"><strong>Edit, Convert and Transform Minecraft Worlds.</strong></h1>
+                <p class="text-secondary" style="text-align:left;margin-bottom:10px;text-shadow:0px 0px 1px;">The first open-source, all-in-one Minecraft tool, compatible with nearly all platforms,<br>versions, and editions, created by the community for the community.</p>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="card" style="background: rgba(255,255,255,0);border-style: none;"></div>
-            </div>
+            <div class="col-md-12" style="padding-right:50px;padding-left:50px;"><a class="btn btn-dark link-body-emphasis" role="button" style="margin-top:15px;box-shadow:0px 0px 15px #9e86de;margin-bottom:15px;border-color:#9e86de;" href="https://discord.gg/umHRdX6R7V"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewbox="0 0 16 16" class="bi bi-discord" style="font-size:24px;"><path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"></path></svg><strong>&nbsp;Join us on Discord</strong></a></div>
         </div>
     </div>
-    <div class="container text-center" data-aos="fade-up" style="/*background: #1f1f26;*/padding-left: 30px;padding-right: 30px;border-style: none;padding-bottom: 5px;">
-        <div class="intro"></div><button class="btn btn-primary link-body-emphasis" type="button" style="margin-top: 5px;box-shadow: 0px 0px 11px #ad95ed;border-style: none;">Explore All Features&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right icon">
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
-            </svg></button>
-    </div>
-    <div class="container text-center" data-aos="fade-up" style="margin-top: 50px;padding-left: 30px;padding-right: 30px;margin-bottom: 50px;padding-bottom: 20px;border-style: none;border-color: rgb(66,67,88);">
+    <div class="container" id="whyChooseLodestone">
         <div class="intro"></div>
-        <div class="row justify-content-evenly align-items-stretch features">
-            <div class="col-md-12 text-center">
-                <h2 class="text-center" style="margin-bottom: 30px;color: #c07bff;margin-top: 20px;font-weight: bold;">The True Leader In Version Support</h2>
+        <div class="row idkwhattonamethisLMAO" style="justify-content:center;margin-top:70px;margin-bottom:2.5px;">
+            <div class="col-md-4 text-bg-dark coolHoverThing" style="border-width: 1px;border-radius: 15px;padding-right: 20px;padding-left: 20px;">
+                <div class="text-bg-light d-flex flex-shrink-0 justify-content-center align-items-center bs-icon-sm bs-icon-rounded bs-icon-primary-light d-inline-block mb-3 bs-icon" style="width:60px;height:60px;margin-right:6px;margin-top:10px;"><i class="fas fa-check text-primary icon" style="font-size: 40px;"></i></div>
+                <h3 class="text-body name" style="text-align:left;margin-bottom:10px;margin-top:35px;font-size:24px;">Compatible</h3>
+                <p class="text-secondary description" style="text-align:left;">It works both as an app and as a web-app, allowing you to access it from anywhere, on any device.</p>
             </div>
-            <div class="col">
-                <div class="text-center d-flex justify-content-center flex-wrap justify-content-xxl-center" style="margin-bottom: 5px;/*display: flex;*//*flex-direction: row;*/">
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;"><img style="width: 70px;height: 70px;" src="assets/img/PLATFORMS/MINECRAFT/Java_Platform_Icon.svg"></div>
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;"><img style="width: 70px;height: 70px;" src="assets/img/PLATFORMS/MINECRAFT/Bedrock_Platform_Icon.svg"></div>
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;"><img style="width: 63.5px;height: 63.5px;" src="assets/img/PLATFORMS/MINECRAFT/Xbox_Platform_Icon.svg"></div>
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-right: 10px;margin-top: 10px;"><img style="width: 68px;height: 68px;" src="assets/img/PLATFORMS/MINECRAFT/PlayStation_Platform_Icon.svg"></div>
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-top: 10px;margin-right: 10px;"><img style="width: 69px;height: 69px;" src="assets/img/PLATFORMS/MINECRAFT/Nintendo_Wii_U_Platform_Icon.svg"></div>
-                    <div class="bs-icon-sm bs-icon-rounded bs-icon-primary-light d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon" style="width: 80px;height: 80px;margin-top: 10px;"><img style="width: 60px;height: 60px;" src="assets/img/PLATFORMS/MINECRAFT/Nintendo_Switch_Platform_Icon.svg"></div>
-                </div>
+            <div class="col-md-4 text-bg-dark coolHoverThing" style="border-width: 1px;border-radius: 15px;padding-right: 20px;padding-left: 20px;">
+                <div class="text-bg-light d-flex flex-shrink-0 justify-content-center align-items-center bs-icon-sm bs-icon-rounded bs-icon-primary-light d-inline-block mb-3 bs-icon" style="width:60px;height:60px;margin-right:6px;margin-top:10px;"><i class="fa fa-paint-brush text-primary icon" style="font-size: 40px;"></i></div>
+                <h3 class="text-body name" style="text-align:left;margin-bottom:10px;margin-top:35px;font-size:24px;">Fun</h3>
+                <p class="text-secondary description" style="text-align:left;">Extensive customization options paired with user-friendly design ensure an enjoyable experience.</p>
             </div>
-        </div>
-        <div class="row text-bg-secondary" style="border-radius: 20px;border: 1px solid rgb(127,127,127) ;">
-            <div class="col-md-4">
-                <div class="card" style="border-style: none;">
-                    <div class="card-body text-bg-secondary" style="color: rgb(255,255,255);">
-                        <h4 class="card-title" style="text-align: center;color: #ad95ed;">Java</h4>
-                        <p class="text-body card-text" style="text-align: left;"><strong>Platforms:</strong><br>• Windows<br>• macOS<br>• Linux<br>• Android (via PoJav)<br><br>1.3.0 - 1.21</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="border-style: none;">
-                    <div class="card-body text-bg-secondary" style="color: rgb(255,255,255);">
-                        <h4 class="card-title" style="text-align: center;color: #ad95ed;">Bedrock</h4>
-                        <p class="text-body card-text" style="text-align: left;"><strong>Platforms:</strong><br>• Windows / macOS / Linux<br>• Android<br>• iOS / iPadOS<br><br><strong>With Realms Transfer</strong><br>• Xbox One / Series X &amp; S<br>• PlayStation®4 / 5<br>• Nintendo Switch<br><br>&nbsp;1.0.0 - 1.20</p>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="border-style: none;">
-                    <div class="card-body text-bg-secondary" style="color: rgb(255,255,255);">
-                        <h4 class="card-title" style="text-align: center;color: #ad95ed;">Console</h4>
-                        <p class="text-body card-text" style="text-align: left;">Xbox:<br>• Xbox 360 | TU0 - TU75<br>• Xbox One | CU0 - CU58<br><br>PlayStation:<br>• PlayStation®3 | 1.00 - 1.84 <br>• PlayStation®Vita&nbsp;| 1.00 - 1.84<br>• PlayStation®4 | 1.00 - 1.95<br><br>Nintendo:<br>• Nintendo Switch | 1.0.0 - 1.0.17<br>• Nintendo Wii U | Patch 1 - Patch 43</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid" data-aos="fade-up" id="whyChooseLodestone" style="/*padding-left: 80px;*//*padding-right: 80px;*/border-radius: 20px;padding-bottom: 20px;margin-bottom: 50px;margin-top: 50px;/*display: flex;*//*flex-direction: column;*//*justify-content: center;*//*align-items: center;*/@media screen and (max-width: 575.98px) { width: 80%;border: 1px solid rgb(127,127,127);">
-        <div class="intro">
-            <h2 class="text-center" style="margin-bottom: 30px;color: #c07bff;margin-top: 20px;padding-top: 15px;">Why Choose Lodestone</h2>
-        </div>
-        <div class="row idkwhattonamethisLMAO" style="/*padding-right: 30px;*//*padding-left: 30px;*//*width: 100% !important;*//*display: flex;*//*align-items: center;*/justify-content: center;/*flex-wrap: wrap-reverse;*/">
-            <div class="col-md-4 coolHoverThing" style="/*margin-left: 12px;*/border-width: 1px;">
-                <h3 class="text-body name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><i class="fa fa-globe icon" style="color: #ad95ed;font-size: 40px;width: 40px;margin-bottom: 5px;"></i><br>Compatible</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: left;">Lodestone works both as an app and as a web-app. This means that you can access it from anywhere and on any device.</p>
-            </div>
-            <div class="col-md-4 coolHoverThing" style="border-width: 1px;">
-                <h3 class="text-body name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><i class="fa fa-paint-brush icon" style="color: #ad95ed;font-size: 40px;margin-bottom: 5px;"></i><br>Fun To Use</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: left;">Lodestone offers extensive customization options while remaining user-friendly. This includes UI coloring customization through themes and customizable modules.&nbsp;</p>
-            </div>
-            <div class="col-md-4 coolHoverThing" style="border-width: 1px;">
-                <h3 class="text-body name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-lightning-fill icon" style="color: #ad95ed;font-size: 40px;margin-bottom: 5px;">
+            <div class="col-md-4 text-bg-dark coolHoverThing" style="border-width: 1px;border-radius: 15px;padding-right: 20px;padding-left: 20px;">
+                <div class="text-bg-light d-flex flex-shrink-0 justify-content-center align-items-center bs-icon-sm bs-icon-rounded bs-icon-primary-light d-inline-block mb-3 bs-icon" style="width:60px;height:60px;margin-right:6px;margin-top:10px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-lightning-fill text-primary icon" style="font-size: 40px;">
                         <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"></path>
-                    </svg><br>Fast &amp; Powerful</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: left;">&nbsp;With speed optimization and multi-threading, Lodestone ensures highly efficient performance, minimizing resource usage and eliminating memory leaks.</p>
+                    </svg></div>
+                <h3 class="text-body name" style="text-align:left;margin-bottom:10px;margin-top:35px;font-size:24px;">Agile</h3>
+                <p class="text-secondary description" style="text-align:left;">Optimized for speed and multi-threading, it minimizes resources and prevents memory leaks.</p>
             </div>
         </div>
-        <div class="row idkwhattonamethisLMAO" style="/*padding-right: 30px;*//*padding-left: 30px;*//*display: flex;*//*align-items: center;*/justify-content: center;">
-            <div class="col-md-4 coolHoverThing" style="/*margin-left: 12px;*/border-width: 1px;">
-                <h3 class="text-body name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><i class="fa fa-plus icon" style="color: #ad95ed;font-size: 40px;width: 40px;margin-bottom: 5px;"></i><br>Add-Ons</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: left;">Extensions, plug-ins, and extension scripts are all supported within Lodestone. This unlocks unlimited possibilities.</p>
+        <div class="row idkwhattonamethisLMAO" style="justify-content:center;margin-top:2.5px;margin-bottom:2.5px;">
+            <div class="col-md-4 text-bg-dark coolHoverThing" style="border-width:1px;border-radius:15px;padding-right:20px;padding-left:20px;">
+                <div class="text-bg-light d-flex flex-shrink-0 justify-content-center align-items-center bs-icon-sm bs-icon-rounded bs-icon-primary-light d-inline-block mb-3 bs-icon" style="width:60px;height:60px;margin-right:6px;margin-top:10px;"><i class="fas fa-plus text-primary icon" style="font-size: 40px;width: 40px;"></i></div>
+                <h3 class="text-body name" style="text-align:left;margin-bottom:10px;margin-top:35px;font-size:24px;">Extendable</h3>
+                <p class="text-secondary description" style="text-align:left;">Extensions, plugins, and scripts are supported, unlocking endless possibilities.</p>
             </div>
-            <div class="col-md-4 coolHoverThing" style="/*margin: 5px;*/border-width: 1px;">
-                <h3 class="text-body name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-text-right icon" style="color: #ad95ed;font-size: 40px;margin-bottom: 5px;">
-                        <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"></path>
-                    </svg><br>Built-In Resigners</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: left;">Built-in resigners enable you to access your legacy PS3/Vita worlds without the need for any third-party software. Region conversion is also included!</p>
+            <div class="col-md-4 text-bg-dark coolHoverThing" style="border-width:1px;border-radius:15px;padding-right:20px;padding-left:20px;">
+                <div class="text-bg-light d-flex flex-shrink-0 justify-content-center align-items-center bs-icon-sm bs-icon-rounded bs-icon-primary-light d-inline-block mb-3 bs-icon" style="width:60px;height:60px;margin-right:6px;margin-top:10px;"><i class="fas fa-align-right text-primary icon" style="font-size: 40px;"></i></div>
+                <h3 class="text-body name" style="text-align:left;margin-bottom:10px;margin-top:35px;font-size:24px;">Convenient</h3>
+                <p class="text-secondary description" style="text-align:left;">Built-in resigners grant PS3/Vita world access and region conversion without third-party tools!</p>
             </div>
-            <div class="col-md-4 coolHoverThing" style="border-width: 1px;">
-                <h3 class="text-body name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-universal-access icon" style="color: #ad95ed;font-size: 40px;margin-bottom: 5px;">
+            <div class="col-md-4 text-bg-dark coolHoverThing" style="border-width:1px;border-radius:15px;padding-left:20px;padding-right:20px;">
+                <div class="text-bg-light d-flex flex-shrink-0 justify-content-center align-items-center bs-icon-sm bs-icon-rounded bs-icon-primary-light d-inline-block mb-3 bs-icon" style="width:60px;height:60px;margin-right:6px;margin-top:10px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-universal-access text-primary icon" style="font-size: 40px;">
                         <path d="M9.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0M6 5.5l-4.535-.442A.531.531 0 0 1 1.531 4H14.47a.531.531 0 0 1 .066 1.058L10 5.5V9l.452 6.42a.535.535 0 0 1-1.053.174L8.243 9.97c-.064-.252-.422-.252-.486 0l-1.156 5.624a.535.535 0 0 1-1.053-.174L6 9z"></path>
-                    </svg><br>Accessibility</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: left;">We've implemented several settings and optimizations for users with visual disabilities. Ensuring accessibility is crucial to creating a world for everyone.</p>
+                    </svg></div>
+                <h3 class="text-body name" style="text-align:left;margin-bottom:10px;margin-top:35px;font-size:24px;">Accessible</h3>
+                <p class="text-secondary description" style="text-align:left;">Several settings and optimizations for visual disabilities ensure accessibility for all.</p>
             </div>
         </div>
-        <div class="row idkwhattonamethisLMAO" style="/*padding-right: 30px;*//*display: flex;*//*align-items: center;*/justify-content: center;/*padding-left: 30px;*/">
-            <div class="col-md-4 coolHoverThing" style="/*margin-left: 12px;*/border-width: 1px;">
-                <h3 class="text-body name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="icon" style="color: #ad95ed;font-size: 40px;margin-bottom: 5px;">
+        <div class="row idkwhattonamethisLMAO" style="justify-content:center;margin-top:2.5px;margin-bottom:2.5px;">
+            <div class="col-md-4 text-bg-dark coolHoverThing" style="border-width:1px;border-radius:15px;padding-right:20px;padding-left:20px;">
+                <div class="text-bg-light d-flex flex-shrink-0 justify-content-center align-items-center bs-icon-sm bs-icon-rounded bs-icon-primary-light d-inline-block mb-3 bs-icon" style="width:60px;height:60px;margin-right:6px;margin-top:10px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="text-primary icon" style="font-size: 40px;">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M5 2C5.55228 2 6 2.44772 6 3V4H7C7.55228 4 8 4.44772 8 5C8 5.55228 7.55228 6 7 6H6V7C6 7.55228 5.55228 8 5 8C4.44772 8 4 7.55228 4 7V6H3C2.44772 6 2 5.55228 2 5C2 4.44772 2.44772 4 3 4H4V3C4 2.44772 4.44772 2 5 2ZM5 12C5.55228 12 6 12.4477 6 13V14H7C7.55228 14 8 14.4477 8 15C8 15.5523 7.55228 16 7 16H6V17C6 17.5523 5.55228 18 5 18C4.44772 18 4 17.5523 4 17V16H3C2.44772 16 2 15.5523 2 15C2 14.4477 2.44772 14 3 14H4V13C4 12.4477 4.44772 12 5 12Z" fill="currentColor"></path>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9999 2C12.4537 2 12.8505 2.30548 12.9667 2.74411L14.1459 7.19893L17.4997 9.13381C17.8092 9.31241 17.9999 9.64262 17.9999 10C17.9999 10.3574 17.8092 10.6876 17.4997 10.8662L14.1459 12.8011L12.9667 17.2559C12.8505 17.6945 12.4537 18 11.9999 18C11.5462 18 11.1493 17.6945 11.0332 17.2559L9.85402 12.8011L6.50027 10.8662C6.19072 10.6876 6 10.3574 6 10C6 9.64262 6.19072 9.31241 6.50027 9.13382L9.85402 7.19893L11.0332 2.74411C11.1493 2.30548 11.5462 2 11.9999 2Z" fill="currentColor"></path>
-                    </svg><br>Smart Updates</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: left;">No more worries about staying up-to-date!&nbsp;<span style="background-color: rgb(230, 219, 255);">The toolset will continually expand and evolve in sync with new Minecraft updates and all users will receive the latest updates simultaneously.</span></p>
+                    </svg></div>
+                <h3 class="text-body name" style="text-align:left;margin-bottom:10px;margin-top:35px;font-size:24px;">Smart</h3>
+                <p class="text-secondary description" style="text-align:left;">The toolset evolves with Minecraft updates, keeping all users up-to-date effortlessly.<span style="background-color:rgb(230, 219, 255);"></span></p>
             </div>
-            <div class="col-md-4 coolHoverThing" style="border-width: 1px;">
-                <h3 class="text-body name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-translate icon" style="color: #ad95ed;font-size: 40px;margin-bottom: 5px;">
+            <div class="col-md-4 text-bg-dark coolHoverThing" style="border-width:1px;border-radius:15px;padding-left:20px;padding-right:20px;">
+                <div class="text-bg-light d-flex flex-shrink-0 justify-content-center align-items-center bs-icon-sm bs-icon-rounded bs-icon-primary-light d-inline-block mb-3 bs-icon" style="width:60px;height:60px;margin-right:6px;margin-top:10px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-translate text-primary icon" style="font-size: 40px;">
                         <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"></path>
                         <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"></path>
-                    </svg><br>Translations</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: left;">We take pride in supporting all major languages. Being open-source, we also benefit from contributions from the community.</p>
+                    </svg></div>
+                <h3 class="text-body name" style="text-align:left;margin-bottom:10px;margin-top:35px;font-size:24px;">Adaptive</h3>
+                <p class="text-secondary description" style="text-align:left;">Supporting all major languages, it thrives on open-source community contributions.</p>
             </div>
-            <div class="col-md-4 coolHoverThing" style="border-width: 1px;">
-                <h3 class="text-body name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-tools icon" style="color: #ad95ed;font-size: 40px;margin-bottom: 5px;">
-                        <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"></path>
-                    </svg><br>Debug</h3>
-                <p class="text-body description" style="margin-bottom: 30px;text-align: left;">Debug like a pro with the built-in debugging features. More updates to debugging tools will come to Lodestone as it grows.</p>
+            <div class="col-md-4 text-bg-dark coolHoverThing" style="border-width:1px;border-radius:15px;padding-left:20px;padding-right:20px;">
+                <div class="text-bg-light d-flex flex-shrink-0 justify-content-center align-items-center bs-icon-sm bs-icon-rounded bs-icon-primary-light d-inline-block mb-3 bs-icon" style="width:60px;height:60px;margin-right:6px;margin-top:10px;"><i class="fas fa-terminal text-primary icon" style="font-size: 40px;"></i></div>
+                <h3 class="text-body name" style="text-align:left;margin-bottom:10px;margin-top:35px;font-size:24px;">Helpful</h3>
+                <p class="text-secondary description" style="text-align:left;">Debug like a pro with built-in tools, with more updates on the way.</p>
             </div>
         </div>
-        <div class="col-md-12" data-aos="fade-up">
-            <h3 class="text-body name" style="text-align: center;margin-bottom: 10px;margin-top: 35px;font-size: 32px;"><i class="fa fa-github icon" style="color: #ad95ed;font-size: 40px;margin-bottom: 5px;"></i>&nbsp;+&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cloud-slash-fill icon" style="color: #ad95ed;font-size: 40px;margin-bottom: 5px;">
-                    <path fill-rule="evenodd" d="M3.112 5.112a3.125 3.125 0 0 0-.17.613C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13H11zm11.372 7.372L4.937 2.937A5.512 5.512 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773a3.2 3.2 0 0 1-1.516 2.711m-.838 1.87-12-12 .708-.708 12 12-.707.707z"></path>
-                </svg><br>No Sketchy Servers</h3>
-            <p class="text-center text-body description" style="margin-bottom: 30px;text-align: left;">We do not hide secret servers or loggers of any kind within Lodestone. All worlds stay private and are not sent anywhere. We are 100% open-source and we highly encourage the community to learn how the toolset works, pull requests are also encouraged!</p>
-        </div>
-    </div>
-    <section class="features-boxed" style="background: #1b1b21;margin-top: 80px;">
-        <footer class="text-bg-secondary footer-dark">
-            <div class="container">
-                <div class="row justify-content-between align-items-stretch">
-                    <div class="col-sm-6 col-md-3 text-body item" style="width: 220px;">
-                        <h3 style="text-align: left;font-size: 20px;padding-top: 25px;">PAGES</h3>
-                        <ul>
-                            <li style="text-align: left;"><a href="index.html">Home</a></li>
-                            <li style="text-align: left;"><a href="#">Guides</a></li>
-                            <li style="text-align: left;"><a href="#">Documentation</a></li>
-                            <li style="text-align: left;"><a href="download/index.html">Download</a></li>
+        <footer>
+            <div class="container py-4 py-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
+                        <h3 class="fs-6">Navigation</h3>
+                        <ul class="list-unstyled">
+                            <li><a class="link-secondary" href="#">Home</a></li>
+                            <li><a class="link-secondary" href="#">Tutorials</a></li>
+                            <li><a class="link-secondary" href="#">Download</a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-6 col-md-3 text-body item" style="width: 220px;">
-                        <h3 style="text-align: left;font-size: 20px;padding-top: 25px;">FEATURES</h3>
-                        <ul>
-                            <li style="text-align: left;"><a href="#">NBT Editor</a></li>
-                            <li style="text-align: left;"><a href="#">Sculptor</a></li>
-                            <li style="text-align: left;"><a href="#">Converter</a></li>
-                            <li style="text-align: left;"><a href="#">GRF Editor</a></li>
-                            <li style="text-align: left;"><a href="#"><span style="color: rgb(203, 218, 230); background-color: rgb(10, 14, 18);">Sculptor</span></a></li>
+                    <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
+                        <h3 class="fs-6">Features</h3>
+                        <ul class="list-unstyled">
+                            <li><a class="link-secondary" href="#">Save Editor</a></li>
+                            <li><a class="link-secondary" href="#">World Converter</a></li>
+                            <li><a class="link-secondary" href="#">Add here</a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-6 col-md-3 text-body item" style="width: 220px;">
-                        <h3 style="text-align: left;font-size: 20px;padding-top: 25px;">MISC.</h3>
-                        <ul>
-                            <li style="text-align: left;"><a href="#"><span style="color: inherit;">Open-Source Licensing</span></a></li>
-                            <li style="text-align: left;"><a href="https://discord.gg/8K3eVGVbKG">Discord Community</a></li>
-                            <li style="text-align: left;"><a href="https://github.com/Team-Lodestone/Documentation/blob/main/Team.md">Team / Credits</a></li>
+                    <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
+                        <h3 class="fs-6">Misc.</h3>
+                        <ul class="list-unstyled">
+                            <li><a class="link-secondary" href="#">FOSS Licensing</a></li>
+                            <li><a class="link-secondary" href="#">Team / Creits</a></li>
                         </ul>
                     </div>
-                    <div class="col-auto col-md-6 text-body item text">
-                        <h3 style="text-align: left;font-size: 20px;padding-top: 25px;">ABOUT US</h3>
-                        <p class="lead text-secondary-emphasis" style="text-align: left;">Lodestone is an open-source Minecraft project focused on bringing powerful tools and resources to everyone for free!&nbsp;</p>
+                    <div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last item social">
+                        <div class="fw-bold d-flex align-items-center mb-2"></div><img src="assets/img/logos/Lodestone.svg" width="135" height="83">
+                        <p class="text-secondary copyright">Lodestone is an open-source Minecraft project focused on bringing powerful tools and resources to everyone for free!&nbsp;</p>
                     </div>
                 </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center pt-3">
+                    <p class="text-muted mb-0">Copyright © 2025 Project Lodestone</p>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewbox="0 0 16 16" class="bi bi-reddit"><path d="M6.167 8a.831.831 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661m1.843 3.647c.315 0 1.403-.038 1.976-.611a.232.232 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83.458 0 .83-.381.83-.83a.831.831 0 0 0-1.66 0z"></path><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.203.203 0 0 0-.153.028.186.186 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224c-.02.115-.029.23-.029.353 0 1.795 2.091 3.256 4.669 3.256 2.577 0 4.668-1.451 4.668-3.256 0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165z"></path></svg></li>
+                        <li class="list-inline-item list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewbox="0 0 16 16" class="bi bi-github"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"></path></svg></li>
+                        <li class="list-inline-item list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewbox="0 0 16 16" class="bi bi-discord"><path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"></path></svg></li>
+                    </ul>
+                </div>
             </div>
-            <p class="text-center text-secondary-emphasis" style="text-align: right;color: rgba(217,217,217,0.24);padding-top: 25px;"><strong>## 4J Studios / Mojang Studios / Microsoft / Sony / Nintendo ##</strong><br>PROJECT LODESTONE IS NOT AN OFFICIAL MINECRAFT PRODUCT.</p>
-            <p class="text-secondary-emphasis copyright" style="color: rgb(217,217,217);">Project Lodestone © 2024</p>
         </footer>
-    </section>
+    </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/js/aos.min.js"></script>
+    <script src="assets/js/js/bs-init.js"></script>
+    <script src="assets/js/Navbar---Apple-navbar---apple.js"></script>
 </body>
 
 </html>

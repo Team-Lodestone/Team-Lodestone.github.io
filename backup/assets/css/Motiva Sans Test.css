@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'Motiva Sans Test';
+	src: url(../../assets/fonts/Motiva%20Sans%20Test-db7ac297274e4cff39b840e258e10d61.woff2) format('woff2'),
+	url(../../assets/fonts/Motiva%20Sans%20Test-8098152ff87039e46852f262e544a7c2.woff) format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
