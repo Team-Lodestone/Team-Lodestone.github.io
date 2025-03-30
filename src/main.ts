@@ -21,6 +21,7 @@ export const url = "https://team-lodestone.github.io"
 import {getLocaleFromNavigator, init, register} from 'svelte-i18n'
 
 register('en-US', async () => await import('./Assets/L10N/en-us.json'));
+register('fr', async () => await import('./Assets/L10N/fr.json'));
 
 const getLanguage = (): string | null => {
   const lang = localStorage.getItem("language");
