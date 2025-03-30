@@ -113,7 +113,7 @@
       },
       "worksEverywhere": {
         "alt": "Icône de carte",
-        "description": "Il fonctionne comme une application web, ce qui signifie que tout appareil doté d'un navigateur moderne et d'une connexion Internet peut utiliser Project Lodestone (ou même hors ligne, grâce au PWA)",
+        "description": "Il fonctionne comme une application web, ce qui signifie que tout appareil doté d'un navigateur moderne et d'une connexion Internet peut utiliser Project Lodestone. (ou même hors ligne, grâce au PWA.)",
         "title": "Fonctionne « partout »"
       }
     },
