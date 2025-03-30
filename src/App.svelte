@@ -42,7 +42,7 @@
     </Route>
   </Router>
 
-  <Footer logo={largeLogo} notice="Project Lodestone is NOT an official Minecraft product.">
+  <Footer logo={largeLogo} notice={$t('footer.notice')}>
     <button class="topbarButton" title={$t('footer.buttons.openCredits.title')} on:click={setShowCredits}>{$t('footer.buttons.openCredits.text')}</button>
     <ButtonLink class="button topbarButton" href="https://github.com/team-lodestone/team-lodestone.github.io" title={$t('footer.buttons.openSource.title')}>{$t('footer.buttons.openSource.text')}</ButtonLink>
     <ButtonLink class="button topbarButton" href="https://team-lodestone.github.io/Documentation/Team" title={$t('footer.buttons.openTeam.title')}>{$t('footer.buttons.openTeam.text')}</ButtonLink>

@@ -44,6 +44,7 @@
     }
   },
   "footer": {
+    "notice": "Project Lodestone is NOT an official Minecraft product.",
     "buttons": {
       "openCredits": {
         "text": "Credits",
