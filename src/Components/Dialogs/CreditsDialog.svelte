@@ -51,14 +51,18 @@
         <hr>
 
         <div class="credits translations">
+            <!-- TODO: Organize by language instead of user -->
             <GitHubUser username="dTentione" displayName="DTention">
-                <h2 class="language">{$t('languages.ar')}, {$t('languages.ar')}</h2>
+                <h2 class="language">{$t('languages.ar')}, {$t('languages.ckb')}, {$t('languages.kmr')}</h2>
             </GitHubUser>
             <GitHubUser username="9110751907">
                 <h2 class="language">{$t('languages.ja-JP')}</h2>
             </GitHubUser>
             <GitHubUser username="AikoBorowski" displayName="BreakingMC">
-                <h2 class="language">{$t('languages.fr-CA')}</h2>
+                <h2 class="language">{$t('languages.fr')}</h2>
+            </GitHubUser>
+            <GitHubUser username="LouLouNoLegend" displayName="LouLouNoLegend">
+                <h2 class="language">{$t('languages.fr')}</h2>
             </GitHubUser>
         </div>
 
