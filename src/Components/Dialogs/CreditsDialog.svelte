@@ -64,7 +64,9 @@
             <LanguageCard language="ja">
                 <GitHubUser username="9110751907" noDesc noCard />
             </LanguageCard>
-
+            <LanguageCard language="ru">
+                <GitHubUser username="PouffyPanda8510" noDesc noCard />
+            </LanguageCard>
         </div>
 
         <h2>{$t('credits.repoContributors.title')}</h2>

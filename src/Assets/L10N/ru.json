@@ -1,0 +1,224 @@
+{
+  "credits": {
+    "assets": {
+      "external": {
+        "html": "Некоторые иконки с <a href='https://icons.getbootstrap.com/' class='button'>Bootstrap Icons</a> и <a href='https://fontawesome.com' class='button'>FontAwesome</a>"
+      },
+      "nikstudios": {
+        "li-1": "Создал логотип и Ассеты Project Lodestone"
+      },
+      "title": "Ассеты"
+    },
+    "repoContributors": {
+      "button": {
+        "image": {
+          "alt": "Участники репозитория"
+        },
+        "title": "Участники репозитория"
+      },
+      "title": "Участники репозитория"
+    },
+    "title": "Авторы",
+    "translations": {
+      "title": "Переводы"
+    },
+    "website": {
+      "dexrnzacattack": {
+        "li-1": "Переписал на Svelte",
+        "li-2": "Сделал сайт локализуемым",
+        "li-3": "Сделал тему",
+        "li-4": "Переделал части сайта"
+      },
+      "eternalmodz": {
+        "li-1": "Разработал первоначальный сайт",
+        "li-2": "Разработал первоначальный макет для дальнейшего развития",
+        "li-3": "Помощь с программой чтения с экрана и общим тестированием доступности"
+      },
+      "title": "Сайт"
+    }
+  },
+  "dialog": {
+    "close": {
+      "ariaLabel": "Закрыть диалог",
+      "title": "Закрыть диалог"
+    }
+  },
+  "footer": {
+    "buttons": {
+      "openCredits": {
+        "text": "Авторы",
+        "title": "Просмотреть список людей благодаря которым сайт существует"
+      },
+      "openSource": {
+        "text": "Просмотреть исходный код",
+        "title": "Просмотреть исходный код сайта"
+      },
+      "openTeam": {
+        "text": "Команда",
+        "title": "Просмотреть Команду Разработчиков"
+      }
+    }
+  },
+  "home": {
+    "buttons": {
+      "openDiscord": {
+        "ariaLabel": "Присоединиться в Discord",
+        "text": "",
+        "title": "Присоединияйтесь к нам в Discord"
+      },
+      "openDocumentation": {
+        "ariaLabel": "",
+        "text": "Подробнее",
+        "title": "Открыть документацию"
+      },
+      "openLodestone": {
+        "ariaLabel": "",
+        "text": "Запустить Project Lodestone",
+        "title": "Запустить Lodestone (На данный момент Lodestone в разработке и он ещё не вышел)",
+        "tooltip": "На данный момент Lodestone в разработке и он ещё не вышел"
+      }
+    },
+    "info": {
+      "description": "Первый универсальный инструмент Minecraft с открытым исходным кодом, совместимый практически со всеми платформами, версиями и изданиями, созданный сообществом для сообщества.",
+      "header": "Редактируйте, Конвертируйте и Трансформируйте Миры Minecraft.",
+      "name": "Project Lodestone"
+    },
+    "infoBoxes": {
+      "accessible": {
+        "alt": "Иконка доступности",
+        "description": "Большое внимание уделяется доступности.\nТакие вещи, как поддержка экранного диктора и правильное масштабирование дисплея, важны для обеспечения более широкого доступа к Lodestone.",
+        "title": "Доступный"
+      },
+      "compatible": {
+        "alt": "Иконка галочки",
+        "description": "Lodestone Будет поддерживать практически все издания и версии Minecraft.\nНапример, ваши миры из Minecraft Classic 0.30-c можно преобразовать для работы в Minecraft: Xbox 360 Edition.",
+        "title": "Совместимый"
+      },
+      "editEverything": {
+        "alt": "Иконка файла",
+        "description": "С поддержкой файлов NBT*, SNBT*, MCR/MCA*, MCS, ARC*, LOC*, PCK*, VDB/CDB*, FUI*, and more.\n\n*Недоступно в данной сборке, см. Подробнее.",
+        "title": "Редактируйте любой тип файла Minecraft"
+      },
+      "fullControl": {
+        "alt": "Иконка земли",
+        "description": "Вы сможете редактировать своего игрока, давать себе предметы (даже некоторые недоступные), помещать предметы в сундуки, редактировать данные сущностей и блоков и многое другое!\n\nПРИМЕЧАНИЕ: эта функция не является приоритетной, пока разрабатывается остальная часть инструмента.",
+        "title": "Полный контроль над вашим миром"
+      },
+      "header": "Возможности",
+      "localized": {
+        "alt": "Иконка Перевода",
+        "description": "Благодаря поддержке локализации на любой язык Project Lodestone может использоваться людьми по всему миру.\n\nХотите помочь? см. CONTRIBUTING.md в соответствующем репозитории GitHub, чтобы узнать, как это сделать.",
+        "title": "Локализованный"
+      },
+      "worksEverywhere": {
+        "alt": "Иконка Карты",
+        "description": "Lodestone работает как веб-приложение, то есть любое устройство с современным браузером и подключением к Интернету может использовать Project Lodestone. (или даже офлайн, используя Прогрессивное веб-приложение)",
+        "title": "Работает \"везде\""
+      }
+    },
+    "supportedEditions": {
+      "3DS": {
+        "alt": "Иконка крестовины",
+        "title": "New Nintendo 3DS Edition"
+      },
+      "BE": {
+        "alt": "Иконка Смартфона",
+        "title": "Bedrock/Pocket Edition"
+      },
+      "JE": {
+        "alt": "Иконка копмьютера",
+        "title": "Java Edition"
+      },
+      "LCE": {
+        "alt": "Иконка Контроллера",
+        "title": "Legacy Console Edition"
+      },
+      "PI": {
+        "alt": "Логотип Raspberry Pi",
+        "title": "Raspberry Pi Edition"
+      },
+      "header": "Поддерживаемые издания"
+    }
+  },
+  "languageDialog": {
+    "buttons": {
+      "ok": {
+        "text": "ОК"
+      }
+    },
+    "dropDownBox": {
+      "header": "Выберете язык",
+      "title": "Выберете язык"
+    },
+    "title": "Языки"
+  },
+  "languages": {
+    "browserLanguage": "Использовать язык браузера",
+    "ar": "Арабский",
+    "ckb": "Центральный курдский",
+    "en-US": "Английский (Соединённые Штаты)",
+    "ru": "Русский",
+    "fr": "Франуцузкий",
+    "ja": "Японский",
+    "kmr": "Северный курдский"
+  },
+  "scrollable": {
+    "arrows": {
+      "left": {
+        "ariaLabel": "Прокрутить влево",
+        "title": "Прокрутить влево"
+      },
+      "right": {
+        "ariaLabel": "Прокрутить вправо",
+        "title": "Прокрутить вправо"
+      }
+    }
+  },
+  "topbar": {
+    "buttons": {
+      "openDiscord": {
+        "ariaLabel": "Присоединяйтесь к нам в Discord",
+        "text": "Присоединяйтесь к нам в Discord",
+        "title": "Присоединяйтесь к нам в Discord"
+      },
+      "openDocumentation": {
+        "ariaLabel": "Открыть документацию Project Lodestone",
+        "text": "Открыть документацию",
+        "title": "Открыть документацию по Project Lodestone и техничексой информации Minecraft для всех изданий."
+      },
+      "openGitHub": {
+        "ariaLabel": "Просмотреть GitHub",
+        "text": "Просмотреть GitHub",
+        "title": "Перейти на Github Команды Lodestone"
+      },
+      "openLanguageDialog": {
+        "ariaLabel": "Выберете язык",
+        "text": "Выберете язык",
+        "title": "Выберете язык"
+      },
+      "openLodestone": {
+        "ariaLabel": "",
+        "text": "Запустить Project Lodestone",
+        "title": "Запустить Project Lodestone (На данный момент Lodestone находится в разработке и ещё не вышел)"
+      }
+    },
+    "expander": {
+      "ariaLabel": {
+        "closed": "Открыть меню",
+        "opened": "Закрыть меню"
+      },
+      "title": {
+        "closed": "Открыть меню",
+        "opened": "Закрыть меню"
+      }
+    },
+    "homeButton": {
+      "ariaLabel": "Кнопка Домой",
+      "logo": {
+        "alt": "Логотип Lodestone (Маленькая L)"
+      },
+      "name": "Project Lodestone",
+      "title": "Перейти Домой"
+    }
+  }
+}
