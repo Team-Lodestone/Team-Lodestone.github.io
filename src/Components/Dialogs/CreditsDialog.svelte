@@ -1,6 +1,7 @@
 <script lang="ts">
     import {Dialog} from "@team-lodestone/lodestone-ui";
     import GitHubUser from "../GitHubUser.svelte";
+    import LanguageCard from "../LanguageCard.svelte";
     import { _ as t } from 'svelte-i18n'
 
     let dialog: Dialog;
@@ -51,19 +52,19 @@
         <hr>
 
         <div class="credits translations">
-            <!-- TODO: Organize by language instead of user -->
-            <GitHubUser username="dTentione" displayName="DTention">
-                <h2 class="language">{$t('languages.ar')}, {$t('languages.ckb')}, {$t('languages.kmr')}</h2>
-            </GitHubUser>
-            <GitHubUser username="9110751907">
-                <h2 class="language">{$t('languages.ja-JP')}</h2>
-            </GitHubUser>
-            <GitHubUser username="AikoBorowski" displayName="BreakingMC">
-                <h2 class="language">{$t('languages.fr')}</h2>
-            </GitHubUser>
-            <GitHubUser username="LouLouNoLegend" displayName="LouLouNoLegend">
-                <h2 class="language">{$t('languages.fr')}</h2>
-            </GitHubUser>
+            <!-- TODO: Figure out how to do both Central and Northern Kurdish, (maybe combine? But there's Southern Kurdish too I think) -->
+            <!-- Browsers also only have "Kurdish" (lang code: ku) -->
+            <LanguageCard language="ar">
+                <GitHubUser username="dTentione" displayName="DTention" noDesc noCard />
+            </LanguageCard>
+            <LanguageCard language="fr">
+                <GitHubUser username="AikoBorowski" displayName="BreakingMC" noDesc noCard />
+                <GitHubUser username="LoulouNoLegend" displayName="LoulouNoLegend" noDesc noCard />
+            </LanguageCard>
+            <LanguageCard language="ja">
+                <GitHubUser username="9110751907" noDesc noCard />
+            </LanguageCard>
+
         </div>
 
         <h2>{$t('credits.repoContributors.title')}</h2>

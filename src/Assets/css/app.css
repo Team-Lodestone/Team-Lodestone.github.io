@@ -244,7 +244,7 @@ html {
   color: var(--website-dev-color);
 }
 
-.translations .GitHubUser .button:hover {
+.translations .LanguageCard .translators .button:hover {
   border-color: var(--translator-color);
   filter: drop-shadow(0 0 0.5em var(--translator-color));
   color: var(--translator-color);
