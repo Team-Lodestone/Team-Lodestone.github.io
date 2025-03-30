@@ -44,7 +44,7 @@
     }
   },
   "footer": {
-    "notice": "",
+    "notice": "Project Lodestone не является официальным продуктом Minecraft",
     "buttons": {
       "openCredits": {
         "text": "Авторы",
@@ -97,7 +97,7 @@
       },
       "editEverything": {
         "alt": "Иконка файла",
-        "description": "С поддержкой файлов NBT*, SNBT*, MCR/MCA*, MCS, ARC*, LOC*, PCK*, VDB/CDB*, FUI*, and more.\n\n*Недоступно в данной сборке, см. Подробнее.",
+        "description": "Поддерживает файлы формата NBT*, SNBT*, MCR/MCA*, MCS, ARC*, LOC*, PCK*, VDB/CDB*, FUI*, и даже больше.\n\n*Недоступно в данной сборке, см. Подробнее.",
         "title": "Редактируйте любой тип файла Minecraft"
       },
       "fullControl": {
