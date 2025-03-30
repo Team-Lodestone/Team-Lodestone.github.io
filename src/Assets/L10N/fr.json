@@ -120,23 +120,23 @@
     "supportedEditions": {
       "3DS": {
         "alt": "Icône de D-Pad",
-        "title": "Édition New Nintendo 3DS"
+        "title": "New Nintendo 3DS Edition"
       },
       "BE": {
         "alt": "Icône de téléphone",
-        "title": "Édition Bedrock/Pocket"
+        "title": "Bedrock/Pocket Edition"
       },
       "JE": {
         "alt": "Icône d'ordinateur de bureau",
-        "title": "Édition Java"
+        "title": "Java Edition"
       },
       "LCE": {
         "alt": "Icône de manette",
-        "title": "Édition console Legacy"
+        "title": "Legacy Console Edition"
       },
       "PI": {
         "alt": "Logo Raspberry Pi",
-        "title": "Édition Raspberry Pi"
+        "title": "Raspberry Pi Edition"
       },
       "header": "Éditions supportées"
     }
