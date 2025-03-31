@@ -22,6 +22,7 @@ import {getLocaleFromNavigator, init, register} from 'svelte-i18n'
 
 // has to have US bc browser returns en-US instead of en
 register('en-US', async () => await import('./Assets/L10N/en-us.json'));
+register('fr', async () => await import('./Assets/L10N/fr.json'));
 register('ru', async () => await import('./Assets/L10N/ru.json'));
 
 const getLanguage = (): string | null => {
