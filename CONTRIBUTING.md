@@ -21,7 +21,7 @@ To find a list of Language Codes using Firefox, go to `about:preferences`, searc
 You can also find the language code of the currently used Navigator language by opening devtools and typing `console.log(navigator.language);`.
 
 > [!IMPORTANT]
-> There are also separate translations for the [UI Library](https://github.com/Team-Lodestone/UI) that is not included in this project.   
+> There are also separate translations for the [UI Library](https://github.com/Team-Lodestone/UI/blob/main/CONTRIBUTING.md) that is not included in this project.  
 > It is required that you also translate them.
 
 After verifying that the translations show correctly, and following the [guidelines](#guidelines), you can add yourself to [the credits](/src/App.svelte#L80) and then make a pull request to submit the translation.
