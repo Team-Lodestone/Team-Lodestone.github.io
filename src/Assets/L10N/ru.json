@@ -37,14 +37,7 @@
       "title": "Сайт"
     }
   },
-  "dialog": {
-    "close": {
-      "ariaLabel": "Закрыть диалог",
-      "title": "Закрыть диалог"
-    }
-  },
   "footer": {
-    "notice": "Project Lodestone не является официальным продуктом Minecraft",
     "buttons": {
       "openCredits": {
         "text": "Авторы",
@@ -58,7 +51,8 @@
         "text": "Команда",
         "title": "Просмотреть Команду Разработчиков"
       }
-    }
+    },
+    "notice": "Project Lodestone не является официальным продуктом Minecraft"
   },
   "home": {
     "buttons": {
@@ -154,26 +148,14 @@
     "title": "Языки"
   },
   "languages": {
-    "browserLanguage": "Использовать язык браузера",
     "ar": "Арабский",
+    "browserLanguage": "Использовать язык браузера",
     "ckb": "Центральный курдский",
     "en-US": "Английский (Соединённые Штаты)",
-    "ru": "Русский",
     "fr": "Франуцузкий",
     "ja": "Японский",
-    "kmr": "Северный курдский"
-  },
-  "scrollable": {
-    "arrows": {
-      "left": {
-        "ariaLabel": "Прокрутить влево",
-        "title": "Прокрутить влево"
-      },
-      "right": {
-        "ariaLabel": "Прокрутить вправо",
-        "title": "Прокрутить вправо"
-      }
-    }
+    "kmr": "Северный курдский",
+    "ru": "Русский"
   },
   "topbar": {
     "buttons": {
@@ -202,24 +184,15 @@
         "text": "Запустить Project Lodestone",
         "title": "Запустить Project Lodestone (На данный момент Lodestone находится в разработке и ещё не вышел)"
       }
-    },
-    "expander": {
-      "ariaLabel": {
-        "closed": "Открыть меню",
-        "opened": "Закрыть меню"
-      },
-      "title": {
-        "closed": "Открыть меню",
-        "opened": "Закрыть меню"
+    }
+  },
+  "LodestoneUI": {
+    "Topbar": {
+      "homeButton": {
+        "logo": {
+          "alt": "Логотип Lodestone (Маленькая L)"
+        }
       }
-    },
-    "homeButton": {
-      "ariaLabel": "Кнопка Домой",
-      "logo": {
-        "alt": "Логотип Lodestone (Маленькая L)"
-      },
-      "name": "Project Lodestone",
-      "title": "Перейти Домой"
     }
   }
 }

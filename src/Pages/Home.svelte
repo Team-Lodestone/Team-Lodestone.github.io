@@ -75,10 +75,10 @@
         {$t('home.infoBoxes.header')}
     </h1>
     <div class="infoBoxes">
-        <InfoCard title={$t('home.infoBoxes.compatible.title')} icon="fa-check" alt={$t('home.infoBoxes.compatible.alt')}>{$t('home.infoBoxes.compatible.description')}</InfoCard>
+        <InfoCard title={$t('home.infoBoxes.compatible.title')} icon="fa-solid fa-check" alt={$t('home.infoBoxes.compatible.alt')}>{$t('home.infoBoxes.compatible.description')}</InfoCard>
         <InfoCard title={$t('home.infoBoxes.editEverything.title')} icon="fa-solid fa-file" alt={$t('home.infoBoxes.editEverything.alt')}>{$t('home.infoBoxes.editEverything.description')}</InfoCard>
         <InfoCard title={$t('home.infoBoxes.fullControl.title')} icon="fa-solid fa-earth-americas" alt={$t('home.infoBoxes.fullControl.alt')}>{$t('home.infoBoxes.fullControl.description')}</InfoCard>
-        <InfoCard title={$t('home.infoBoxes.worksEverywhere.title')} icon="fa-map" alt={$t('home.infoBoxes.worksEverywhere.alt')}>{$t('home.infoBoxes.worksEverywhere.description')}</InfoCard>
+        <InfoCard title={$t('home.infoBoxes.worksEverywhere.title')} icon="fa-solid fa-map" alt={$t('home.infoBoxes.worksEverywhere.alt')}>{$t('home.infoBoxes.worksEverywhere.description')}</InfoCard>
         <InfoCard title={$t('home.infoBoxes.accessible.title')} icon="fa-solid fa-universal-access" alt={$t('home.infoBoxes.accessible.alt')}>{$t('home.infoBoxes.accessible.description')}</InfoCard>
         <InfoCard title={$t('home.infoBoxes.localized.title')} icon="bi bi-translate" alt={$t('home.infoBoxes.localized.alt')}>{$t('home.infoBoxes.localized.description')}</InfoCard>
     </div>

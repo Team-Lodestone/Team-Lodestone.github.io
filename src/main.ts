@@ -20,6 +20,7 @@ export const url = "https://team-lodestone.github.io"
 // region l10n
 import {getLocaleFromNavigator, init, register} from 'svelte-i18n'
 
+// has to have US bc browser returns en-US instead of en
 register('en-US', async () => await import('./Assets/L10N/en-us.json'));
 register('ru', async () => await import('./Assets/L10N/ru.json'));
 

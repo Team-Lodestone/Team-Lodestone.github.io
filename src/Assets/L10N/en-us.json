@@ -37,14 +37,7 @@
       "title": "Website"
     }
   },
-  "dialog": {
-    "close": {
-      "ariaLabel": "Close dialog",
-      "title": "Close dialog"
-    }
-  },
   "footer": {
-    "notice": "Project Lodestone is NOT an official Minecraft product.",
     "buttons": {
       "openCredits": {
         "text": "Credits",
@@ -58,7 +51,8 @@
         "text": "Team",
         "title": "View the team"
       }
-    }
+    },
+    "notice": "Project Lodestone is NOT an official Minecraft product."
   },
   "home": {
     "buttons": {
@@ -154,26 +148,14 @@
     "title": "Languages"
   },
   "languages": {
-    "browserLanguage": "Use Browser Language",
     "ar": "Arabic",
+    "browserLanguage": "Use Browser Language",
     "ckb": "Central Kurdish",
     "en-US": "English (United States)",
-    "ru": "Russian",
     "fr": "French",
     "ja": "Japanese",
-    "kmr": "Northern Kurdish"
-  },
-  "scrollable": {
-    "arrows": {
-      "left": {
-        "ariaLabel": "Scroll left",
-        "title": "Scroll left"
-      },
-      "right": {
-        "ariaLabel": "Scroll right",
-        "title": "Scroll right"
-      }
-    }
+    "kmr": "Northern Kurdish",
+    "ru": "Russian"
   },
   "topbar": {
     "buttons": {
@@ -190,7 +172,7 @@
       "openGitHub": {
         "ariaLabel": "View the GitHub",
         "text": "View the GitHub",
-        "title": "Go to Team Lodestone's GitHub"
+        "title": "Go to Project Lodestone's GitHub"
       },
       "openLanguageDialog": {
         "ariaLabel": "Select a language",
@@ -202,24 +184,15 @@
         "text": "Launch Project Lodestone",
         "title": "Launch Project Lodestone (Lodestone is currently in development and has not been released yet)"
       }
-    },
-    "expander": {
-      "ariaLabel": {
-        "closed": "Open menu",
-        "opened": "Close menu"
-      },
-      "title": {
-        "closed": "Open menu",
-        "opened": "Close menu"
+    }
+  },
+  "LodestoneUI": {
+    "Topbar": {
+      "homeButton": {
+        "logo": {
+          "alt": "Lodestone Logo (Small L)"
+        }
       }
-    },
-    "homeButton": {
-      "ariaLabel": "Home button",
-      "logo": {
-        "alt": "Lodestone Logo (Small L)"
-      },
-      "name": "Project Lodestone",
-      "title": "Go home"
     }
   }
 }

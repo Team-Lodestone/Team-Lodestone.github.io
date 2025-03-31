@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {Dialog} from "@team-lodestone/lodestone-ui";
+    import { Dialog } from "@team-lodestone/lodestone-ui";
     import GitHubUser from "../GitHubUser.svelte";
     import LanguageCard from "../LanguageCard.svelte";
     import { _ as t } from 'svelte-i18n'
