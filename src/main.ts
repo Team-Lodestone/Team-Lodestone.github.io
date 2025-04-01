@@ -18,12 +18,19 @@ export const url = "https://team-lodestone.github.io"
 // endregion
 
 // region l10n
-import {getLocaleFromNavigator, init, register} from 'svelte-i18n'
+import { getLocaleFromNavigator, init, addMessages, register } from 'svelte-i18n';
+import { initLUILanguages } from "@team-lodestone/lodestone-ui";
 
-// has to have US bc browser returns en-US instead of en
-register('en-US', async () => await import('./Assets/L10N/en-us.json'));
-register('fr', async () => await import('./Assets/L10N/fr.json'));
-register('ru', async () => await import('./Assets/L10N/ru.json'));
+const initL10N = async () => {
+  // has to have US bc browser returns en-US instead of en
+  // also use addMessages over register to avoid flash of content while loading other language during switch.
+  addMessages('en-US', (await import('./Assets/L10N/en-us.json')) as never);
+  addMessages('fr', (await import('./Assets/L10N/fr.json')) as never);
+  addMessages('ru', (await import('./Assets/L10N/ru.json')) as never);
+
+  // setup l10n
+  await setupL10N();
+}
 
 const getLanguage = (): string | null => {
   const lang = localStorage.getItem("language");
@@ -32,15 +39,28 @@ const getLanguage = (): string | null => {
   else return getLocaleFromNavigator();
 }
 
-export const initL10N = async () => await init({ fallbackLocale: 'en-US', initialLocale: getLanguage(), warnOnMissingMessages: true });
-
-initL10N();
+export const setupL10N = async () => {
+  await initLUILanguages({ fallbackLocale: 'en-US', initialLocale: getLanguage(), warnOnMissingMessages: true });
+  await init({ fallbackLocale: 'en-US', initialLocale: getLanguage(), warnOnMissingMessages: true });
+}
 // endregion
 
-// region app
-const app = mount(App, {
-  target: document.getElementById('app')!,
-})
 
-export default app
+// region app
+let app: { $set?: any, $on?: any } | undefined = undefined;
+
+async function initApp() {
+  await initL10N();
+
+  return mount(App, {
+    target: document.getElementById('app')!,
+  })
+}
+
+// if we don't wait for initL10N we get locale loading race condition afaik
+initApp().then((mounted) => {
+  app = mounted;
+});
+
+export default app;
 // endregion

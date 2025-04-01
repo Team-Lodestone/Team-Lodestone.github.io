@@ -16,6 +16,6 @@ export default defineConfig({
     }),
   ],
   server: {
-    allowedHosts: ['localhost', '127.0.0.1', 'team-lodestone.github.io', 'b6e7-146-70-211-58.ngrok-free.app'],
+    allowedHosts: ['localhost', '127.0.0.1', 'team-lodestone.github.io'],
   }
 })

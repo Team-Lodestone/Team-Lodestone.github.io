@@ -9,12 +9,12 @@ For translations, the target language of this site is English, so you should bas
 under [/src/Assets/L10N](/src/Assets/L10N) there are JSON files for the existing supported languages.   
 For adding your own, copy the [en-us.json](/src/Assets/L10N/en-us.json) file and rename it with the correct locale code for the targeted language. (e.g Japanese would be `ja.json`)
 
-To have the language work on the site, add the language translation to the JSON file, then go to [main.ts](/src/main.ts#L29) and add a new line.   
+To have the language work on the site, add the language translation to the JSON file, then go to [main.ts](/src/main.ts#L27) and add a new line.   
 The line should look like this (using Japanese as an example):
-```register('ja', () => import('./Assets/L10N/ja.json'));```   
+`addMessages('ja', await import('./L10N/ja.json') as never);`
 
 Which boils down to:
-```register('language-code', () => import('./Assets/L10N/language-code.json'));```   
+`addMessages('language-code', await import('./L10N/language-code.json') as never);`
 
 To find a list of Language Codes using Firefox, go to `about:preferences`, search `language`, and choose `Choose your preferred language for displaying pages`, then find your language and look at the code (in the square brackets)   
 

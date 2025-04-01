@@ -47,6 +47,4 @@
     <ButtonLink class="button topbarButton" href="https://github.com/team-lodestone/team-lodestone.github.io" title={$t('footer.buttons.openSource.title')}>{$t('footer.buttons.openSource.text')}</ButtonLink>
     <ButtonLink class="button topbarButton" href="https://team-lodestone.github.io/Documentation/Team" title={$t('footer.buttons.openTeam.title')}>{$t('footer.buttons.openTeam.text')}</ButtonLink>
   </Footer>
-{:else}
-  <h1>Loading</h1>
 {/if}

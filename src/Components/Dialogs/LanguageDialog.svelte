@@ -2,7 +2,7 @@
     import {Dialog, DropDownBox} from "@team-lodestone/lodestone-ui";
 		import { locales, locale } from 'svelte-i18n'
     import { _ as t } from 'svelte-i18n'
-		import { initL10N } from '../../main';
+		import { setupL10N } from '../../main';
 
     let dialog: Dialog;
 
@@ -13,7 +13,7 @@
 		function setLanguage(e: Event): void {
 			// UNTESTED (can't test until new language is added)
 			localStorage.setItem("language", (e.currentTarget as HTMLSelectElement).value)
-			initL10N();
+			setupL10N();
 		}
 </script>
 
