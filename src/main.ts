@@ -24,9 +24,10 @@ import { initLUILanguages } from "@team-lodestone/lodestone-ui";
 const initL10N = async () => {
   // has to have US bc browser returns en-US instead of en
   // also use addMessages over register to avoid flash of content while loading other language during switch.
-  addMessages('en-US', (await import('./Assets/L10N/ja.json')) as never);
+  addMessages('en-US', (await import('./Assets/L10N/en-us.json')) as never);
   addMessages('fr', (await import('./Assets/L10N/fr.json')) as never);
   addMessages('ru', (await import('./Assets/L10N/ru.json')) as never);
+  addMessages('ja', (await import('./Assets/L10N/ja.json')) as never);
 
   // setup l10n
   await setupL10N();
