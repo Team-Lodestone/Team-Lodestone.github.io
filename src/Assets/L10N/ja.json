@@ -1,0 +1,225 @@
+{
+  "credits": {
+    "assets": {
+      "external": {
+        "html": "一部のアイコンは <a href='https://icons.getbootstrap.com/' class='button'>Bootstrap Icons</a> と <a href='https://fontawesome.com' class='button'>FontAwesome</a> のものを使用しています。"
+      },
+      "nikstudios": {
+        "li-1": "Project Lodestoneのロゴとアセットを作成しました。"
+      },
+      "title": "アセット"
+    },
+    "repoContributors": {
+      "button": {
+        "image": {
+          "alt": "リポジトリの貢献者"
+        },
+        "title": "リポジトリの貢献者"
+      },
+      "title": "リポジトリ貢献者"
+    },
+    "title": "クレジット",
+    "translations": {
+      "title": "翻訳"
+    },
+    "website": {
+      "dexrnzacattack": {
+        "li-1": "Svelte に書き直しました",
+        "li-2": "サイトをローカライズ対応にしました",
+        "li-3": "テーマを作成しました",
+        "li-4": "サイトの一部を再設計しました"
+      },
+      "eternalmodz": {
+        "li-1": "最初のサイトを設計しました",
+        "li-2": "基盤となるレイアウトを設計しました",
+        "li-3": "スクリーンリーダーやアクセシビリティのテストを支援しました"
+      },
+      "title": "ウェブサイト"
+    }
+  },
+  "dialog": {
+    "close": {
+      "ariaLabel": "ダイアログを閉じる",
+      "title": "ダイアログを閉じる"
+    }
+  },
+  "footer": {
+    "notice": "Project LodestoneはMinecraft公式のプロジェクトではありません。",
+    "buttons": {
+      "openCredits": {
+        "text": "クレジット",
+        "title": "このサイトを作るのに関わった人々の一覧を見る"
+      },
+      "openSource": {
+        "text": "ソースを見る",
+        "title": "このウェブサイトのソースコードを見る"
+      },
+      "openTeam": {
+        "text": "チーム",
+        "title": "チームを見る"
+      }
+    }
+  },
+  "home": {
+    "buttons": {
+      "openDiscord": {
+        "ariaLabel": "Discordに参加する",
+        "text": "",
+        "title": "Discordに参加する"
+      },
+      "openDocumentation": {
+        "ariaLabel": "",
+        "text": "詳しく見る",
+        "title": "ドキュメントを開く"
+      },
+      "openLodestone": {
+        "ariaLabel": "",
+        "text": "Project Lodestoneを起動",
+        "title": "Project Lodestoneを起動（現在開発中でまだ公開されていません）",
+        "tooltip": "現在開発中でまだ公開されていません"
+      }
+    },
+    "info": {
+      "description": "コミュニティによって作られた、ほぼすべてのプラットフォーム・バージョン・エディションに対応した、オープンソースMinecraftワンツール",
+      "header": "Minecraftのワールドを編集・変換・カスタマイズ。",
+      "name": "Project Lodestone"
+    },
+    "infoBoxes": {
+      "accessible": {
+        "alt": "アクセシビリティアイコン",
+        "description": "アクセシビリティにも重点を置いています。\nスクリーンリーダー対応や正しい表示スケーリングなどを通じて、より多くの人が Lodestone を使えるようにしています。",
+        "title": "アクセシブル"
+      },
+      "compatible": {
+        "alt": "チェックマークアイコン",
+        "description": "ほぼすべての Minecraft エディション・バージョンをサポート予定。\n例えば、Minecraft Classic 0.30-c から Xbox 360 Edition へのワールド変換が可能になります。",
+        "title": "高い互換性"
+      },
+      "editEverything": {
+        "alt": "ファイルアイコン",
+        "description": "NBT*, SNBT*, MCR/MCA*, MCS, ARC*, LOC*, PCK*, VDB/CDB*, FUI* などの形式に対応予定。\n\n* 現在のビルドでは未対応。詳細は「詳しく見る」で確認してください。",
+        "title": "あらゆる Minecraft ファイル形式を編集"
+      },
+      "fullControl": {
+        "alt": "地球アイコン",
+        "description": "プレイヤーデータの編集、アイテムの付与（クリエイティブインベントリ上で入手不可能なものも含む）、チェストの中身編集、エンティティやブロックデータの編集などが可能になります。\n\n※ この機能はツール完成後に優先されます。",
+        "title": "ワールドを完全にコントロール"
+      },
+      "header": "特徴",
+      "localized": {
+        "alt": "翻訳アイコン",
+        "description": "あらゆる言語へのローカライズに対応しており、世界中の人々がProject Lodestoneを使えます。\n\n協力したい方は GitHub リポジトリ内の CONTRIBUTING.md をご覧ください。",
+        "title": "多言語対応"
+      },
+      "worksEverywhere": {
+        "alt": "地図アイコン",
+        "description": "Web アプリとして動作するので、インターネット接続とモダンブラウザがあればどんなデバイスでも使用可能。（PWA でオフライン動作も可能）",
+        "title": "どこでも動く"
+      }
+    },
+    "supportedEditions": {
+      "3DS": {
+        "alt": "十字キーアイコン",
+        "title": "New Nintendo 3DS版"
+      },
+      "BE": {
+        "alt": "スマホアイコン",
+        "title": "統合版"
+      },
+      "JE": {
+        "alt": "デスクトップアイコン",
+        "title": "Java版"
+      },
+      "LCE": {
+        "alt": "ゲームパッドアイコン",
+        "title": "コンソール版"
+      },
+      "PI": {
+        "alt": "Raspberry Pi ロゴ",
+        "title": "Raspberry Pi版"
+      },
+      "header": "対応エディション"
+    }
+  },
+  "languageDialog": {
+    "buttons": {
+      "ok": {
+        "text": "OK"
+      }
+    },
+    "dropDownBox": {
+      "header": "言語を選択",
+      "title": "言語を選択"
+    },
+    "title": "言語"
+  },
+  "languages": {
+    "browserLanguage": "ブラウザの言語を使用",
+    "ar": "عربي",
+    "ckb": "ناوەندی کوردی",
+    "en-US": "English (United States)",
+    "ru": "Русский",
+    "fr": "Français",
+    "ja": "日本語",
+    "kmr": "kurdiya bakur"
+  },
+  "scrollable": {
+    "arrows": {
+      "left": {
+        "ariaLabel": "左にスクロール",
+        "title": "左にスクロール"
+      },
+      "right": {
+        "ariaLabel": "右にスクロール",
+        "title": "右にスクロール"
+      }
+    }
+  },
+  "topbar": {
+    "buttons": {
+      "openDiscord": {
+        "ariaLabel": "Discordに参加する",
+        "text": "Discordに参加する",
+        "title": "Discordに参加する"
+      },
+      "openDocumentation": {
+        "ariaLabel": "Project Lodestoneのドキュメントを開く",
+        "text": "ドキュメントを開く",
+        "title": "Project Lodestoneとすべてのエディション向け技術情報のドキュメントを開く"
+      },
+      "openGitHub": {
+        "ariaLabel": "GitHubを開く",
+        "text": "GitHubを開く",
+        "title": "Team LodestoneのGitHubへ移動"
+      },
+      "openLanguageDialog": {
+        "ariaLabel": "言語を選択",
+        "text": "言語を選択",
+        "title": "言語を選択"
+      },
+      "openLodestone": {
+        "ariaLabel": "",
+        "text": "Project Lodestoneを起動",
+        "title": "Project Lodestoneを起動（現在開発中でまだ公開されていません）"
+      }
+    },
+    "expander": {
+      "ariaLabel": {
+        "closed": "メニューを開く",
+        "opened": "メニューを閉じる"
+      },
+      "title": {
+        "closed": "メニューを開く",
+        "opened": "メニューを閉じる"
+      }
+    },
+    "homeButton": {
+      "ariaLabel": "ホームボタン",
+      "logo": {
+        "alt": "Lodestone ロゴ (小さい L)"
+      },
+      "name": "Project Lodestone",
+      "title": "ホームに戻る"
+    }
+  }
+}
