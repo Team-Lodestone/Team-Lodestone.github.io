@@ -30,3 +30,4 @@ After verifying that the translations show correctly, and following the [guideli
 1. Do not translate "`Project Lodestone`"
 2. Do not translate the Edition names unless an edition had official translations that clearly show how it's meant to be translated.
 3. Do not translate words found within squiggly brackets (`{}`), these are used for formatting.
+4. Do not translate the language names.
