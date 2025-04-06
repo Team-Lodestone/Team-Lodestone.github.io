@@ -1,0 +1,199 @@
+{
+    "credits": {
+      "assets": {
+        "external": {
+          "html": "Sommige iconen zijn van <a href='https://icons.getbootstrap.com/' class='button'>Bootstrap Icons</a> en <a href='https://fontawesome.com' class='button'>FontAwesome</a>"
+        },
+        "nikstudios": {
+          "li-1": "Heeft het logo en de middelen van Project Lodestone gemaakt"
+        },
+        "title": "Middelen"
+      },
+      "repoContributors": {
+        "button": {
+          "image": {
+            "alt": "Repo contributoren"
+          },
+          "title": "Repo contributoren"
+        },
+        "title": "Repo Contributoren"
+      },
+      "title": "Vermeldingen",
+      "translations": {
+        "title": "Vertalingen"
+      },
+      "website": {
+        "dexrnzacattack": {
+          "li-1": "Heeft het herschreven naar Svelte",
+          "li-2": "Heeft de website lokaliseerbaar gemaakt",
+          "li-3": "Heeft het thema gemaakt",
+          "li-4": "Heeft delen van de website opnieuw ontworpen"
+        },
+        "eternalmodz": {
+          "li-1": "Heeft de oorspronkelijke website ontworpen",
+          "li-2": "Heeft de oorspronkelijke indeling gemaakt om op verder te bouwen",
+          "li-3": "Heeft geholpen met de schermlezer en algemene toegankelijkheidstesten"
+        },
+        "title": "Website"
+      }
+    },
+    "footer": {
+      "buttons": {
+        "openCredits": {
+          "text": "Vermeldingen",
+          "title": "Bekijk de lijst van mensen die deze website mogelijk hebben gemaakt"
+        },
+        "openSource": {
+          "text": "Bekijk source",
+          "title": "Bekijk de website source code"
+        },
+        "openTeam": {
+          "text": "Team",
+          "title": "Bekijk het team"
+        }
+      },
+      "notice": "Project Lodestone is NIET een officieel product van Minecraft."
+    },
+    "home": {
+      "buttons": {
+        "openDiscord": {
+          "ariaLabel": "Doe mee aan de Discord server",
+          "text": "",
+          "title": "Sluit je bij ons aan op Discord"
+        },
+        "openDocumentation": {
+          "ariaLabel": "",
+          "text": "Leer meer",
+          "title": "Open documentatie"
+        },
+        "openLodestone": {
+          "ariaLabel": "",
+          "text": "De lancering van Project Lodestone",
+          "title": "De lancering van Project Lodestone (Lodestone is momenteel in ontwikkeling en is nog niet uitgebracht)",
+          "tooltip": "Lodestone is momenteel in ontwikkeling en is nog niet uitgebracht"
+        }
+      },
+      "info": {
+        "description": "Het eerste open-source, alles-in-een Minecraft hulpmiddel, compatibel met bijna alle platformen, versies, en edities, gemaakt door de community voor de community.",
+        "header": "Bewerk, Converteer en Transformeer Minecraft Werelden.",
+        "name": "Project Lodestone"
+      },
+      "infoBoxes": {
+        "accessible": {
+          "alt": "Toegankelijk icoon",
+          "description": "Toegankelijkheid is een belangrijk aandachtspunt.\nDingen zoals ondersteuning voor een schermlezer en juiste weergaveschaling zijn belangrijk om er voor te zorgen dat er een grotere toegang is tot Lodestone.",
+          "title": "Toegankelijk"
+        },
+        "compatible": {
+          "alt": "Vinkje icoon",
+          "description": "Zal bijna elke editie en versie van minecraft ondersteunen.\nJouw werelden van bijvoorbeeld Minecraft Classic 0.30-c kunnen worden geconverteerd om te werken op Minecraft: Xbox 360 Edition.",
+          "title": "Compatibel"
+        },
+        "editEverything": {
+          "alt": "Bestand icoon",
+          "description": "Met ondersteuning voor NBT*, SNBT*, MCR/MCA*, MCS, ARC*, LOC*, PCK*, VDB/CDB*, FUI*, en meer.\n\n*Niet verkrijgbaar in huidige build, check Leer meer voor voortgang.",
+          "title": "Edit any Minecraft file type"
+        },
+        "fullControl": {
+          "alt": "Aarde icoon",
+          "description": "Je zult jouw player kunnen bewerken, jezelf items kunnen geven (zelfs een paar onverkrijgbaren), items in kisten kunnen plaatsen, entiteit en blok data kunen bewerken, en meer!\n\nOPMERKING: Deze functie is niet een prioriteit zolang de rest van het hulpmiddel niet af is.",
+          "title": "Volledige controle over jouw wereld"
+        },
+        "header": "Functies",
+        "localized": {
+          "alt": "Vertaal icoon",
+          "description": "Met ondersteuning voor lokalisatie voor elke taal kan Project Lodestone worden gebruikt door alle mensen over de hele wereld heen.\n\nWil jij helpen? Check CONTRIBUTING.md in de bijhorende GitHub repo om uit te vinden hoe.",
+          "title": "Gelokaliseerd"
+        },
+        "worksEverywhere": {
+          "alt": "Kaart icoon",
+          "description": "Het werkt als een web-app, wat betekent dat elk apparaat met een moderne browser en een internet connectie Project Lodestone kan gebruiken. (of zelfs offline, door PWA te gebruiken)",
+          "title": "Werkt \"overal\""
+        }
+      },
+      "supportedEditions": {
+        "3DS": {
+          "alt": "D-Pad icoon",
+          "title": "New Nintendo 3DS Edition"
+        },
+        "BE": {
+          "alt": "Telefoon icoon",
+          "title": "Bedrock/Pocket Edition"
+        },
+        "JE": {
+          "alt": "Desktop computer icoon",
+          "title": "Java Edition"
+        },
+        "LCE": {
+          "alt": "Gamepad icoon",
+          "title": "Legacy Console Edition"
+        },
+        "PI": {
+          "alt": "Raspberry Pi logo",
+          "title": "Raspberry Pi Edition"
+        },
+        "header": "Ondersteunde Edities"
+      }
+    },
+    "languageDialog": {
+      "buttons": {
+        "ok": {
+          "text": "OKÉ"
+        }
+      },
+      "dropDownBox": {
+        "header": "Selecteer een taal",
+        "title": "Selecteer een taal"
+      },
+      "title": "Talen"
+    },
+    "languages": {
+      "browserLanguage": "Gebruik Browser Taal",
+      "notice": "Do not translate this string nor any of the strings below.",
+      "ar": "عربي",
+      "ckb": "ناوەندی کوردی",
+      "en-US": "English (United States)",
+      "ru": "Русский",
+      "fr": "Français",
+      "ja": "日本語",
+      "kmr": "kurdiya bakur"
+    },
+    "topbar": {
+      "buttons": {
+        "openDiscord": {
+          "ariaLabel": "Doe mee aan de Discord server",
+          "text": "Doe mee aan de Discord server",
+          "title": "Doe mee aan de Discord server"
+        },
+        "openDocumentation": {
+          "ariaLabel": "Open de Project Lodestone documentatie",
+          "text": "Open documentatie",
+          "title": "Open documentatie voor Project Lodestone en technische Minecraft info voor alle edities."
+        },
+        "openGitHub": {
+          "ariaLabel": "Bekijk de GitHub",
+          "text": "Bekijk de GitHub",
+          "title": "Ga naar de GitHub van Project Lodestone"
+        },
+        "openLanguageDialog": {
+          "ariaLabel": "Selecteer een taal",
+          "text": "Selecteer een taal",
+          "title": "Selecteer een taal"
+        },
+        "openLodestone": {
+          "ariaLabel": "",
+          "text": "Lancering van Project Lodestone",
+          "title": "Lancering van Project Lodestone (Lodestone is momenteel in ontwikkeling en is nog niet uitgebracht)"
+        }
+      }
+    },
+    "LodestoneUI": {
+      "Topbar": {
+        "homeButton": {
+          "logo": {
+            "alt": "Lodestone Logo (Kleine L)"
+          }
+        }
+      }
+    }
+  }
