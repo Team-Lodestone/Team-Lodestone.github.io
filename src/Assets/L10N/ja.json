@@ -155,6 +155,7 @@
   },
   "languages": {
     "browserLanguage": "ブラウザの言語を使用",
+    "notice": "Do not translate this string nor any of the strings below.",
     "ar": "عربي",
     "ckb": "ناوەندی کوردی",
     "en-US": "English (United States)",

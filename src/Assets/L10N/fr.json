@@ -149,13 +149,14 @@
   },
   "languages": {
     "browserLanguage": "Utiliser la langue du navigateur",
-    "ar": "Arabe",
-    "ckb": "Kurde central",
-    "en-US": "Anglais (États-Unis)",
+    "notice": "Do not translate this string nor any of the strings below.",
+    "ar": "عربي",
+    "ckb": "ناوەندی کوردی",
+    "en-US": "English (United States)",
+    "ru": "Русский",
     "fr": "Français",
-    "ja-JP": "Japonais",
-    "kmr": "Kurde du Nord",
-    "ru": "Russe"
+    "ja": "日本語",
+    "kmr": "kurdiya bakur"
   },
   "topbar": {
     "buttons": {

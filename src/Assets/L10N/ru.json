@@ -148,14 +148,15 @@
     "title": "Языки"
   },
   "languages": {
-    "ar": "Арабский",
     "browserLanguage": "Использовать язык браузера",
-    "ckb": "Центральный курдский",
-    "en-US": "Английский (Соединённые Штаты)",
-    "fr": "Франуцузкий",
-    "ja": "Японский",
-    "kmr": "Северный курдский",
-    "ru": "Русский"
+    "notice": "Do not translate this string nor any of the strings below.",
+    "ar": "عربي",
+    "ckb": "ناوەندی کوردی",
+    "en-US": "English (United States)",
+    "ru": "Русский",
+    "fr": "Français",
+    "ja": "日本語",
+    "kmr": "kurdiya bakur"
   },
   "topbar": {
     "buttons": {
