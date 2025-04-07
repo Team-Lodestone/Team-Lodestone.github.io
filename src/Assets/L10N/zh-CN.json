@@ -96,7 +96,7 @@
       },
       "fullControl": {
         "alt": "Earth icon",
-        "description": "You'll be able to edit your player, give yourself items (even some unobtainables), place items in chests, edit entity and block data, and more!\n\nNOTE: This feature is not a priority while the rest of the tool is being made.",
+        "description": "你将能够编辑玩家，给予自己物品（甚至是一些无法获取的物品），将物品放入箱子，编辑实体和方块数据，等等！\n注意：在工具的其余部分完成之前，这个功能不是优先开发项。",
         "title": "完全控制你的世界"
       },
       "header": "Features",
@@ -108,7 +108,7 @@
       "worksEverywhere": {
         "alt": "Map icon",
         "description": "作为一款 Web 应用，Project Lodestone 可在任何拥有现代浏览器和网络连接的设备上使用。此外，通过 PWA 技术，也支持离线访问。",
-        "title": "Works \"everywhere\""
+        "title": "到处运行"
       }
     },
     "supportedEditions": {
@@ -193,7 +193,7 @@
     "Topbar": {
       "homeButton": {
         "logo": {
-          "alt": "Lodestone Logo (Small L)"
+          "alt": "Lodestone 图标 (小L)"
         }
       }
     }
