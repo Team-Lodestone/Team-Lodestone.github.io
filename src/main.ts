@@ -29,6 +29,7 @@ const initL10N = async () => {
   addMessages('ru', (await import('./Assets/L10N/ru.json')) as never);
   addMessages('ja', (await import('./Assets/L10N/ja.json')) as never);
   addMessages('nl', (await import('./Assets/L10N/nl.json')) as never);
+  addMessages('zh-CN', (await import('./Assets/L10N/zh-CN.json')) as never);
 
   // setup l10n
   await setupL10N();
