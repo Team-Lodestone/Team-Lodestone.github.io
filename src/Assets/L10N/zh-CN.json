@@ -1,0 +1,201 @@
+{
+  "credits": {
+    "assets": {
+      "external": {
+        "html": "部分图标来自 <a href='https://icons.getbootstrap.com/' class='button'>Bootstrap Icons</a> 以及 <a href='https://fontawesome.com' class='button'>FontAwesome</a>"
+      },
+      "nikstudios": {
+        "li-1": "Project Lodestone所使用的资源"
+      },
+      "title": "资源"
+    },
+    "repoContributors": {
+      "button": {
+        "image": {
+          "alt": "仓库贡献者"
+        },
+        "title": "仓库贡献者"
+      },
+      "title": "仓库贡献者"
+    },
+    "title": "制作人员",
+    "translations": {
+      "title": "翻译者"
+    },
+    "website": {
+      "dexrnzacattack": {
+        "li-1": "使用Svelte重写",
+        "li-2": "让网站支持多语言",
+        "li-3": "制作主题",
+        "li-4": "重新设计部分网站"
+      },
+      "eternalmodz": {
+        "li-1": "制作初始页",
+        "li-2": "设计了一个可以在其基础上扩展的初始布局",
+        "li-3": "协助测试了屏幕阅读器和整体无障碍功能"
+      },
+      "title": "网站"
+    }
+  },
+  "footer": {
+    "buttons": {
+      "openCredits": {
+        "text": "制作人员",
+        "title": "查看所有制作人员"
+      },
+      "openSource": {
+        "text": "源代码",
+        "title": "查看网页源代码"
+      },
+      "openTeam": {
+        "text": "团队",
+        "title": "查看团队"
+      }
+    },
+    "notice": "Project Lodestone <bold>并不是</bold> Minecraft 官方项目。"
+  },
+  "home": {
+    "buttons": {
+      "openDiscord": {
+        "ariaLabel": "加入Discord",
+        "text": "",
+        "title": "加入Discord"
+      },
+      "openDocumentation": {
+        "ariaLabel": "",
+        "text": "了解更多",
+        "title": "打开文档"
+      },
+      "openLodestone": {
+        "ariaLabel": "",
+        "text": "启动 Project Lodestone",
+        "title": "启动 Project Lodestone (Lodestone目前正在开发中并且暂无发布打算)",
+        "tooltip": "Lodestone目前正在开发中并且暂无发布打算"
+      }
+    },
+    "info": {
+      "description": "首个开源的全能型 Minecraft 工具，兼容几乎所有平台、版本与版本类型，由社区创建，服务于社区。",
+      "header": "编辑、转化并改造 Minecraft 世界。",
+      "name": "Project Lodestone"
+    },
+    "infoBoxes": {
+      "accessible": {
+        "alt": "Accessible icon",
+        "description": "Lodestone 注重无障碍性设计，\n包括对屏幕阅读器的支持及显示缩放的优化，确保更广泛用户群体的可访问性。",
+        "title": "无障碍"
+      },
+      "compatible": {
+        "alt": "Checkmark icon",
+        "description": "将会支持几乎所有的 Minecraft 版本。\n想象一下你在Minecraft Classic 0.30-c创建的世界可以直接转换成Minecraft: Xbox 360 Edition可以读取的世界。",
+        "title": "兼容性"
+      },
+      "editEverything": {
+        "alt": "File icon",
+        "description": "将会支持NBT*, SNBT*, MCR/MCA*, MCS, ARC*, LOC*, PCK*, VDB/CDB*, FUI*等格式。\n\n目前并不可用，详见进度。",
+        "title": "编辑任何 Minecraft 格式"
+      },
+      "fullControl": {
+        "alt": "Earth icon",
+        "description": "You'll be able to edit your player, give yourself items (even some unobtainables), place items in chests, edit entity and block data, and more!\n\nNOTE: This feature is not a priority while the rest of the tool is being made.",
+        "title": "完全控制你的世界"
+      },
+      "header": "Features",
+      "localized": {
+        "alt": "Translation icon",
+        "description": "Lodestone 支持多语言本地化，全球用户都能轻松上手。\n\n想加入我们？去 GitHub 的 CONTRIBUTING.md 看看怎么参与吧！",
+        "title": "本地化"
+      },
+      "worksEverywhere": {
+        "alt": "Map icon",
+        "description": "作为一款 Web 应用，Project Lodestone 可在任何拥有现代浏览器和网络连接的设备上使用。此外，通过 PWA 技术，也支持离线访问。",
+        "title": "Works \"everywhere\""
+      }
+    },
+    "supportedEditions": {
+      "3DS": {
+        "alt": "D-Pad icon",
+        "title": "New Nintendo 3DS版"
+      },
+      "BE": {
+        "alt": "Phone icon",
+        "title": "基岩版/携带版"
+      },
+      "JE": {
+        "alt": "Desktop computer icon",
+        "title": "Java版"
+      },
+      "LCE": {
+        "alt": "Gamepad icon",
+        "title": "原主机版"
+      },
+      "PI": {
+        "alt": "Raspberry Pi logo",
+        "title": "树莓派版"
+      },
+      "header": "支持的版本"
+    }
+  },
+  "languageDialog": {
+    "buttons": {
+      "ok": {
+        "text": "确定"
+      }
+    },
+    "dropDownBox": {
+      "header": "选择语言",
+      "title": "选择一个语言"
+    },
+    "title": "语言"
+  },
+  "languages": {
+    "browserLanguage": "使用浏览器语言",
+    "notice": "不要翻译下面的字符串，翻译了你的麻麻就没有了。",
+    "ar": "عربي",
+    "ckb": "ناوەندی کوردی",
+    "en-US": "English (United States)",
+    "ru": "Русский",
+    "fr": "Français",
+    "ja": "日本語",
+    "kmr": "kurdiya bakur",
+    "nl": "Nederlands",
+    "zh-CN": "中文（简体）"
+  },
+  "topbar": {
+    "buttons": {
+      "openDiscord": {
+        "ariaLabel": "加入Discord",
+        "text": "加入Discord",
+        "title": "加入Discord"
+      },
+      "openDocumentation": {
+        "ariaLabel": "打开 Project Lodestone 文档",
+        "text": "打开文档",
+        "title": "访问 Project Lodestone 文档，获取所有版本的 Minecraft 技术细节。"
+      },
+      "openGitHub": {
+        "ariaLabel": "查看 GitHub",
+        "text": "查看 GitHub",
+        "title": "打开 Project Lodestone 的 GitHub 主页"
+      },
+      "openLanguageDialog": {
+        "ariaLabel": "选择语言",
+        "text": "选择语言",
+        "title": "选择语言"
+      },
+      "openLodestone": {
+        "ariaLabel": "",
+        "text": "启动 Project Lodestone",
+        "title": "启动 Project Lodestone (Lodestone目前正在开发中并且暂无发布打算)"
+      }
+    }
+  },
+  "LodestoneUI": {
+    "Topbar": {
+      "homeButton": {
+        "logo": {
+          "alt": "Lodestone Logo (Small L)"
+        }
+      }
+    }
+  }
+}
