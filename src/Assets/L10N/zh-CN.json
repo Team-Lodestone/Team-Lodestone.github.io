@@ -148,17 +148,7 @@
     "title": "语言"
   },
   "languages": {
-    "browserLanguage": "使用浏览器语言",
-    "notice": "不要翻译下面的字符串，翻译了你的麻麻就没有了。",
-    "ar": "عربي",
-    "ckb": "ناوەندی کوردی",
-    "en-US": "English (United States)",
-    "ru": "Русский",
-    "fr": "Français",
-    "ja": "日本語",
-    "kmr": "kurdiya bakur",
-    "nl": "Nederlands",
-    "zh-CN": "中文（简体）"
+    "browserLanguage": "使用浏览器语言"
   },
   "topbar": {
     "buttons": {

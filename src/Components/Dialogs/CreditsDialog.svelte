@@ -59,16 +59,19 @@
             </LanguageCard>
             <LanguageCard language="fr">
                 <GitHubUser username="AikoBorowski" displayName="BreakingMC" noDesc noCard />
-                <GitHubUser username="LoulouNoLegend" displayName="LoulouNoLegend" noDesc noCard />
+                <GitHubUser username="LoulouNoLegend" noDesc noCard />
             </LanguageCard>
             <LanguageCard language="ja">
                 <GitHubUser username="9110751907" noDesc noCard />
             </LanguageCard>
+            <LanguageCard language="nl">
+                <GitHubUser username="AllanAxolotls" noDesc noCard />
+            </LanguageCard>
             <LanguageCard language="ru">
                 <GitHubUser username="PouffyPanda8510" noDesc noCard />
             </LanguageCard>
-            <LanguageCard language="nl">
-                <GitHubUser username="AllanAxolotls" noDesc noCard />
+            <LanguageCard language="zh-CN">
+                <GitHubUser username="kebufu" displayName="mckuhei" noDesc noCard />
             </LanguageCard>
         </div>
 

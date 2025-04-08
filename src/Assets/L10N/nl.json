@@ -148,16 +148,7 @@
       "title": "Talen"
     },
     "languages": {
-      "browserLanguage": "Gebruik Browser Taal",
-      "notice": "Do not translate this string nor any of the strings below.",
-      "ar": "عربي",
-      "ckb": "ناوەندی کوردی",
-      "en-US": "English (United States)",
-      "ru": "Русский",
-      "fr": "Français",
-      "ja": "日本語",
-      "kmr": "kurdiya bakur",
-      "zh-CN": "中文（简体）"
+      "browserLanguage": "Gebruik Browser Taal"
     },
     "topbar": {
       "buttons": {

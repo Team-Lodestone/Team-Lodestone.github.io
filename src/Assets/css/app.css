@@ -36,7 +36,7 @@
   /* region Role Colors */
   --website-dev-color: #58a2ec;
   --designer-color: #5dbc76; /* harder to read with light mode, orig is 6edf8c */
-  --translator-color: #fa9191;
+  --translator-color: #ff8e56;
   /* endregion */
 
   /* region Other */
@@ -76,7 +76,7 @@
     /* region Role Colors */
     --website-dev-color: #447db6;
     --designer-color: #50a366;
-    --translator-color: #c17070;
+    --translator-color: #d17547;
     /* endregion */
 
     /* region Other */

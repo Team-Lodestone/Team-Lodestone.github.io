@@ -41,9 +41,13 @@
         gap: 10px;
     }
 
+    .ul {
+        padding-left: 0;
+    }
+
     .pfp {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
         border-radius: 5px;
     }
 

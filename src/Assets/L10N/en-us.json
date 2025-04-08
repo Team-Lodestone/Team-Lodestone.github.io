@@ -148,17 +148,7 @@
     "title": "Languages"
   },
   "languages": {
-    "browserLanguage": "Use Browser Language",
-    "notice": "Do not translate this string nor any of the strings below.",
-    "ar": "عربي",
-    "ckb": "ناوەندی کوردی",
-    "en-US": "English (United States)",
-    "ru": "Русский",
-    "fr": "Français",
-    "ja": "日本語",
-    "kmr": "kurdiya bakur",
-    "nl": "Nederlands",
-    "zh-CN": "中文（简体）"
+    "browserLanguage": "Use Browser Language"
   },
   "topbar": {
     "buttons": {
