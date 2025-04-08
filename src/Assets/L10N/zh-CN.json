@@ -5,7 +5,7 @@
         "html": "部分图标来自 <a href='https://icons.getbootstrap.com/' class='button'>Bootstrap Icons</a> 以及 <a href='https://fontawesome.com' class='button'>FontAwesome</a>"
       },
       "nikstudios": {
-        "li-1": "Project Lodestone所使用的资源"
+        "li-1": "Project Lodestone 所使用的资源"
       },
       "title": "资源"
     },
@@ -52,7 +52,7 @@
         "title": "查看团队"
       }
     },
-    "notice": "Project Lodestone <bold>并不是</bold> Minecraft 官方项目。"
+    "notice": "Project Lodestone 并不是 Minecraft 官方项目。"
   },
   "home": {
     "buttons": {
@@ -80,56 +80,56 @@
     },
     "infoBoxes": {
       "accessible": {
-        "alt": "Accessible icon",
+        "alt": "无障碍图标",
         "description": "Lodestone 注重无障碍性设计，\n包括对屏幕阅读器的支持及显示缩放的优化，确保更广泛用户群体的可访问性。",
         "title": "无障碍"
       },
       "compatible": {
-        "alt": "Checkmark icon",
+        "alt": "对号图标",
         "description": "将会支持几乎所有的 Minecraft 版本。\n想象一下你在Minecraft Classic 0.30-c创建的世界可以直接转换成Minecraft: Xbox 360 Edition可以读取的世界。",
         "title": "兼容性"
       },
       "editEverything": {
-        "alt": "File icon",
+        "alt": "文件图标",
         "description": "将会支持NBT*, SNBT*, MCR/MCA*, MCS, ARC*, LOC*, PCK*, VDB/CDB*, FUI*等格式。\n\n目前并不可用，详见进度。",
         "title": "编辑任何 Minecraft 格式"
       },
       "fullControl": {
-        "alt": "Earth icon",
+        "alt": "地球图标",
         "description": "你将能够编辑玩家，给予自己物品（甚至是一些无法获取的物品），将物品放入箱子，编辑实体和方块数据，等等！\n注意：在工具的其余部分完成之前，这个功能不是优先开发项。",
         "title": "完全控制你的世界"
       },
-      "header": "Features",
+      "header": "功能",
       "localized": {
-        "alt": "Translation icon",
+        "alt": "本地化图标",
         "description": "Lodestone 支持多语言本地化，全球用户都能轻松上手。\n\n想加入我们？去 GitHub 的 CONTRIBUTING.md 看看怎么参与吧！",
         "title": "本地化"
       },
       "worksEverywhere": {
-        "alt": "Map icon",
+        "alt": "地图图标",
         "description": "作为一款 Web 应用，Project Lodestone 可在任何拥有现代浏览器和网络连接的设备上使用。此外，通过 PWA 技术，也支持离线访问。",
         "title": "到处运行"
       }
     },
     "supportedEditions": {
       "3DS": {
-        "alt": "D-Pad icon",
+        "alt": "方向键图标",
         "title": "New Nintendo 3DS版"
       },
       "BE": {
-        "alt": "Phone icon",
+        "alt": "手机图标",
         "title": "基岩版/携带版"
       },
       "JE": {
-        "alt": "Desktop computer icon",
+        "alt": "电脑图标",
         "title": "Java版"
       },
       "LCE": {
-        "alt": "Gamepad icon",
+        "alt": "手柄图标",
         "title": "原主机版"
       },
       "PI": {
-        "alt": "Raspberry Pi logo",
+        "alt": "树莓派图标",
         "title": "树莓派版"
       },
       "header": "支持的版本"
