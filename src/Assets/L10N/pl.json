@@ -1,0 +1,191 @@
+{
+  "credits": {
+    "assets": {
+      "external": {
+        "html": "Niektóre ikony pochodzą z <a href='https://icons.getbootstrap.com/' class='button'>Bootstrap Icons</a> oraz <a href='https://fontawesome.com' class='button'>FontAwesome</a>"
+      },
+      "nikstudios": {
+        "li-1": "Stworzył logo i zasoby Project Lodestone"
+      },
+      "title": "Zasoby"
+    },
+    "repoContributors": {
+      "button": {
+        "image": {
+          "alt": "Współautorzy repozytorium"
+        },
+        "title": "Współautorzy repozytorium"
+      },
+      "title": "Współautorzy Repozytorium"
+    },
+    "title": "Autorzy",
+    "translations": {
+      "title": "Tłumaczenia"
+    },
+    "website": {
+      "dexrnzacattack": {
+        "li-1": "Przepisał na Svelte",
+        "li-2": "Umożliwił lokalizację strony",
+        "li-3": "Stworzył motyw graficzny",
+        "li-4": "Przeprojektował części strony"
+      },
+      "eternalmodz": {
+        "li-1": "Zaprojektował wstępną stronę",
+        "li-2": "Zaprojektował pierwowzór układu",
+        "li-3": "Pomógł z testowaniem czytnika ekranu, i ogólnej dostępności"
+      },
+      "title": "Strona internetowa"
+    }
+  },
+  "footer": {
+    "buttons": {
+      "openCredits": {
+        "text": "Autorzy",
+        "title": "Wyświetl listę osób, dzięki którym ta strona powstała"
+      },
+      "openSource": {
+        "text": "Wyświetl źródło",
+        "title": "Wyświetl kod źródłowy strony"
+      },
+      "openTeam": {
+        "text": "Zespół",
+        "title": "Wyświetl zespół"
+      }
+    },
+    "notice": "Project Lodestone NIE jest oficialnym produktem Minecraft."
+  },
+  "home": {
+    "buttons": {
+      "openDiscord": {
+        "ariaLabel": "Dołącz do Discorda",
+        "text": "",
+        "title": "Dołącz do nas na Discordzie"
+      },
+      "openDocumentation": {
+        "ariaLabel": "",
+        "text": "Dowiedz się więcej",
+        "title": "Otwórz dokumentację"
+      },
+      "openLodestone": {
+        "ariaLabel": "",
+        "text": "Otwórz Project Lodestone",
+        "title": "Otwórz Project Lodestone (Lodestone jest aktualnie w fazie rozwoju i nie został jeszcze wydany)",
+        "tooltip": "Lodestone jest aktualnie w fazie rozwoju i nie został jeszcze wydany"
+      }
+    },
+    "info": {
+      "description": "Pierwsze open-source'owe, wielofunkcyjne narzędzie do Minecraft, kompatybilne z niemal wszystkimi platformami, wersjami, i edycjami, stworzone przez społeczność, dla społeczności.",
+      "header": "Edytuj, Konwertuj i Transformuj Światy Minecraft.",
+      "name": "Project Lodestone"
+    },
+    "infoBoxes": {
+      "accessible": {
+        "alt": "Ikonka dostępności",
+        "description": "Dostępność ma dla nas duże znaczenie. \nRzeczy takie jak wspieranie czytników ekranu i poprawne skalowanie wyświetlacza są niezbędne, by umożliwić szerszy dostęp do Lodestone.",
+        "title": "Dostępne"
+      },
+      "compatible": {
+        "alt": "Ikonka dostępności",
+        "description": "Będzie wspierać niemalże wszystkie edycje i wersje Minecraft.\nPrzykładowo, twoje światy z Minecraft Classic 0.30-c mogą być przekonwertowane, by działały na Minecraft: Xbox 360 Edition.",
+        "title": "Kompatybilne"
+      },
+      "editEverything": {
+        "alt": "Ikonka pliku",
+        "description": "Wspiera NBT*, SNBT*, MCR/MCA*, MCS, ARC*, LOC*, PCK*, VDB/CDB*, FUI*, i więcej.\n\n*Niedostępne w aktualnej wersji. Odwiedź sekcję Dowiedz się więcej, by zobaczyć postępy.",
+        "title": "Edytuj jakikolwiek typ pliku Minecraft"
+      },
+      "fullControl": {
+        "alt": "Ikonka Ziemi",
+        "description": "Będziesz mógł/mogła edytować swoją postać, dawać sobie przedmioty (nawet te, których nie da się zdobyć), umieszczać przedmioty w skrzynkach, edytować dane bytów oraz bloków, i więcej!\n\nUWAGA: Ta funkcja nie jest priorytetem, podczas gdy reszta narzędzia jest tworzona.",
+        "title": "Pełna kontrola nad swoim światem"
+      },
+      "header": "Funkcje",
+      "localized": {
+        "alt": "Ikonka tłumaczenia",
+        "description": "Dzięki wsparciu lokalizacji w każdym języku, Project Lodestone mogą używać wszyscy ludzie na świecie.\n\nChcesz pomóc? Odwiedź CONTRIBUTING.md w odpowiednim repozytorium GitHub i zobacz jak.",
+        "title": "Zlokalizowane"
+      },
+      "worksEverywhere": {
+        "alt": "Ikonka mapy",
+        "description": "Działa jako web-app, co oznacza, że każde urządzenie z nowoczesną przeglądarką i połączeniem internetowym może używać Project Lodestone. (albo nawet bez połączenia, używając PWA)",
+        "title": "Działa \"wszędzie\""
+      }
+    },
+    "supportedEditions": {
+      "3DS": {
+        "alt": "Ikonka krzyżaka",
+        "title": "New Nintendo 3DS Edition"
+      },
+      "BE": {
+        "alt": "Ikonka telefonu",
+        "title": "Bedrock/Pocket Edition"
+      },
+      "JE": {
+        "alt": "Ikonka komputera biurowego",
+        "title": "Java Edition"
+      },
+      "LCE": {
+        "alt": "Ikonka kontrolera do gier",
+        "title": "Legacy Console Edition"
+      },
+      "PI": {
+        "alt": "Logo Raspberry Pi",
+        "title": "Raspberry Pi Edition"
+      },
+      "header": "Wspierane edycje"
+    }
+  },
+  "languageDialog": {
+    "buttons": {
+      "ok": {
+        "text": "OK"
+      }
+    },
+    "dropDownBox": {
+      "header": "Wybierz język",
+      "title": "Wybierz język"
+    },
+    "title": "Języki"
+  },
+  "languages": {
+    "browserLanguage": "Użyj Języka Przeglądarki"
+  },
+  "topbar": {
+    "buttons": {
+      "openDiscord": {
+        "ariaLabel": "Dołącz do Discorda",
+        "text": "Dołącz do Discorda",
+        "title": "Dołącz do Discorda"
+      },
+      "openDocumentation": {
+        "ariaLabel": "Otwórz dokumentację Project Lodestone",
+        "text": "Otwórz dokumentację",
+        "title": "Otwórz dokumentację Project Lodestone, i informacje techniczne o wszystkich edycjach Minecraft."
+      },
+      "openGitHub": {
+        "ariaLabel": "Zobacz GitHub",
+        "text": "Zobacz GitHub",
+        "title": "Przejdź do GitHuba Project Lodestone"
+      },
+      "openLanguageDialog": {
+        "ariaLabel": "Wybierz język",
+        "text": "Wybierz język",
+        "title": "Wybierz język"
+      },
+      "openLodestone": {
+        "ariaLabel": "",
+        "text": "Otwórz Project Lodestone",
+        "title": "Otwórz Project Lodestone (Lodestone jest aktualnie w fazie rozwoju i nie został jeszcze wydany)"
+      }
+    }
+  },
+  "LodestoneUI": {
+    "Topbar": {
+      "homeButton": {
+        "logo": {
+          "alt": "Logo Lodestone (Mała literka L)"
+        }
+      }
+    }
+  }
+}
